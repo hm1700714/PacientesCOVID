@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityAdicionarDoente"></activity>
+        <activity android:name=".ActivityAdicionarSintomas"></activity>
+        <activity android:name=".ActivitySintomas" />
+        <activity android:name=".ActivityAdicionarEstadoSaude" />
+        <activity android:name=".ActivityEstadoSaude" />
+        <activity android:name=".ActivityAdicionarDoente" />
         <activity android:name=".ActivityDoentes" />
         <activity android:name=".MainActivity">
             <intent-filter>

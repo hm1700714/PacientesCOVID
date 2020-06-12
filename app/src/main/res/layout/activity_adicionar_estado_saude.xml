@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityAdicionarDoente">
+    tools:context=".ActivityAdicionarEstadoSaude">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutDiaVisita"
@@ -23,7 +23,7 @@
             android:id="@+id/TestInputEditTextInserirDiaVisita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nome_do_utente" />
+            android:hint="@string/dia_da_visita" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,7 +43,7 @@
             android:id="@+id/TestInputEditTextInserirHoraVisita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/morada_do_utente" />
+            android:hint="@string/hora_da_visita" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -63,7 +63,7 @@
             android:id="@+id/TestInputEditTextInserirTemperatura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/contacto_do_utente"
+            android:hint="@string/temperatura_recolhida"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,7 +84,7 @@
             android:id="@+id/TestInputEditTextInserirMedicamentos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/data_de_nascimento"
+            android:hint="@string/medicamentos"
             android:inputType="date" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,10 +93,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="@string/adicionar_doente"
+        android:text="@string/adicionar_estado_saude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMedicamentos" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
