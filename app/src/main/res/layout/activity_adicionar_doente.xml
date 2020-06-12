@@ -7,7 +7,7 @@
     tools:context=".ActivityAdicionarDoente">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutDiaVisita"
+        android:id="@+id/textInputLayoutNomeCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -20,14 +20,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirDiaVisita"
+            android:id="@+id/TestInputEditTextInserirNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/nome_do_utente" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutHoraVisita"
+        android:id="@+id/textInputLayoutMorada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -37,17 +37,17 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDiaVisita">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNomeCliente">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirHoraVisita"
+            android:id="@+id/TestInputEditTextInserirMorada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/morada_do_utente" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutTemperatura"
+        android:id="@+id/textInputLayoutContacto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -57,46 +57,48 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHoraVisita">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMorada">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirTemperatura"
+            android:id="@+id/TestInputEditTextInserirContacto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/contacto_do_utente"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutMedicamentos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+    <TextView
+        android:id="@+id/textViewDataNascimento"
+        android:layout_width="239dp"
+        android:layout_height="45dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
+        android:text="@string/data_de_nascimento"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTemperatura">
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutContacto" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirMedicamentos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/data_de_nascimento"
-            android:inputType="date" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="260dp"
+        android:text="@string/data_botao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonAdicionarEstado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginBottom="160dp"
         android:text="@string/adicionar_doente"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMedicamentos" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
