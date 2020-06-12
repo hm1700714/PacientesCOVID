@@ -29,6 +29,6 @@
     <string name="descricao_sintomas">Descrição dos Sintomas</string>
     <string name="data_botao">Data</string>
     <string name="horas_botao">Horas</string>
-    <string name="dia_da_visita">Dia da Visita</string>
+    <string name="dia_visita">Dia da Visita</string>
     <string name="horas_da_visitas">Horas da Visitas</string>
 </resources>

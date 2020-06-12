@@ -14,7 +14,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="40dp"
         android:text="@string/horas_botao"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textViewHoraVisita"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDataSaude" />
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewHoraVisita"
         android:layout_width="280dp"
         android:layout_height="41dp"
         android:layout_marginTop="40dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewDiaVisita" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutTemperatura"
+        android:id="@+id/textInputLayoutContactoUtente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -52,10 +52,10 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textViewHoraVisita">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirTemperatura"
+            android:id="@+id/TestInputEditTextInserirContacto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/temperatura_recolhida"
@@ -73,14 +73,14 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTemperatura">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutContactoUtente">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TestInputEditTextInserirMedicamentos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/medicamentos"
-            android:inputType="date" />
+            android:inputType="textLongMessage|none" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
