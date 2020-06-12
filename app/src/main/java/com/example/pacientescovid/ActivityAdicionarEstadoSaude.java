@@ -56,8 +56,16 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int date) {
-                String dataString = date + " " + month + " " + year;
-                dataTextView.setText(dataString);
+                //String dataString = date + " " + month + " " + year;
+                //dataTextView.setText(dataString);
+
+                Calendar calendario1 = Calendar.getInstance();
+                calendario1.set(Calendar.YEAR, year);
+                calendario1.set(Calendar.MONTH, month);
+                calendario1.set(Calendar.DATE, date);
+                String dateText = DateFormat.format("EEEE, MMMM d, yyyy", calendario1).toString();
+
+                dataTextView.setText(dateText);
             }
         }, ano, mes, dia);
 
@@ -76,7 +84,8 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hour, int minute) {
-                String horasString =  hour + " horas e " + minute + " minutos " ;
+                //String horasString =  hour + " horas e " + minute + " minutos " ;
+                String horasString =  hour + " : " + minute;
                 horasTextView.setText(horasString);
             }
         },hora, minutos, formato24Horas );// true para mostrar as horas no formato de 24h e false para formato de 12h
