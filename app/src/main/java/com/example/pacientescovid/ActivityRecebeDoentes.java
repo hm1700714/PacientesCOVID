@@ -16,11 +16,11 @@ public class ActivityRecebeDoentes extends AppCompatActivity {
         Intent intent = getIntent();
 
         String nome = intent.getStringExtra("nome");
-        TextView textViewNomeUtente = (TextView) findViewById(R.id.textViewSintomas);
+        TextView textViewNomeUtente = (TextView) findViewById(R.id.textViewTemperatura);
         textViewNomeUtente.setText(nome);
 
         String morada = intent.getStringExtra("morada");
-        TextView textViewMoradaUtente = (TextView) findViewById(R.id.textViewDescricaoSintomas);
+        TextView textViewMoradaUtente = (TextView) findViewById(R.id.textViewMedicamentos);
         textViewMoradaUtente.setText(morada);
 
         String contacto = intent.getStringExtra("contacto");

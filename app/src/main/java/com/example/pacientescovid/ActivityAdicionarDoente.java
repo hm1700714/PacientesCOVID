@@ -79,7 +79,7 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
             return;
         }
 
-        EditText editTextContacto = (EditText) findViewById(R.id.TestInputEditTextInserirContacto);
+        EditText editTextContacto = (EditText) findViewById(R.id.TestInputEditTextInserirTemperatura);
         String contacto = editTextContacto.getText().toString();
 
         if(contacto.length() < 9){

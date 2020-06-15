@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -91,6 +93,43 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
         },hora, minutos, formato24Horas );// true para mostrar as horas no formato de 24h e false para formato de 12h
 
         timePickerDialog.show();
+    }
+
+
+    public void enviaEstadoSaude(View view) {
+
+        Intent intent = new Intent(this, ActivityRecebeEstadoSaude.class);
+
+        //Permite ir buscar a caixa de edição de texto
+
+        EditText editTextTemperatura = (EditText) findViewById(R.id.TestInputEditTextInserirTemperatura);
+        String temperatura = editTextTemperatura.getText().toString();
+
+        //verificação de dados para o nome
+
+        if(temperatura.length() == 0){
+            editTextTemperatura.setError(getString(R.string.temperatura_obrigatoria));
+            editTextTemperatura.requestFocus();
+            return;
+        }
+
+        EditText editTextMedicamentos = (EditText) findViewById(R.id.TestInputEditTextInserirMedicamentos);
+        String medicamentos = editTextMedicamentos.getText().toString();
+
+        if(medicamentos.length() == 0){
+            editTextMedicamentos.setError(getString(R.string.medicamentos_obrigatorios));
+            editTextMedicamentos.requestFocus();
+            return;
+        }
+
+
+        intent.putExtra("febre", temperatura);
+        intent.putExtra("medicamentos", medicamentos);
+
+
+        startActivity(intent);
+
+        //todo: enviar mensagem
     }
 
 

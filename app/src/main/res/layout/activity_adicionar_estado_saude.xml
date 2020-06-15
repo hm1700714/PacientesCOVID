@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewHoraVisita">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirContacto"
+            android:id="@+id/TestInputEditTextInserirTemperatura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/temperatura_recolhida"
@@ -90,6 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:onClick="enviaEstadoSaude"
         android:text="@string/adicionar_estado_saude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

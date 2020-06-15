@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ActivityRecebeSintomas">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".ActivityRecebeEstadoSaude">
 
-    <TextView
-        android:id="@+id/textViewLabelSintomas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/sintomas"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/holo_red_dark" />
+<TextView
+    android:id="@+id/textViewLabelEstadoSaude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="@string/dados_do_paciente"
+    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+    android:textColor="@android:color/holo_red_dark" />
 
     <TextView
         android:id="@+id/textViewTemperatura"
@@ -24,6 +24,7 @@
         android:layout_marginRight="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
         tools:text="Aqui aparece a mensagem do utilizador" />
 
     <TextView
@@ -34,6 +35,7 @@
         android:layout_marginRight="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
         tools:text="Aqui aparece a mensagem do utilizador" />
 
 

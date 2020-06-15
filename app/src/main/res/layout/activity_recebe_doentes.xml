@@ -8,7 +8,7 @@
     tools:context=".ActivityRecebeDoentes">
 
     <TextView
-        android:id="@+id/textViewLabelDadosPaciente"
+        android:id="@+id/textViewLabelEstadoSaude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -17,7 +17,7 @@
         android:textColor="@android:color/holo_red_dark" />
 
     <TextView
-        android:id="@+id/textViewSintomas"
+        android:id="@+id/textViewTemperatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -27,7 +27,7 @@
         tools:text="Aqui aparece a mensagem do utilizador" />
 
     <TextView
-        android:id="@+id/textViewDescricaoSintomas"
+        android:id="@+id/textViewMedicamentos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"

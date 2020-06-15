@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class ActivityRecebeSintomas extends AppCompatActivity {
@@ -18,11 +16,11 @@ public class ActivityRecebeSintomas extends AppCompatActivity {
         Intent intent = getIntent();
 
         String sintoma = intent.getStringExtra("sintoma");
-        TextView textViewSintoma = (TextView) findViewById(R.id.textViewSintomas);
+        TextView textViewSintoma = (TextView) findViewById(R.id.textViewTemperatura);
         textViewSintoma.setText(sintoma);
 
         String descSintoma = intent.getStringExtra("descricaosintoma");
-        TextView textViewDescricao = (TextView) findViewById(R.id.textViewDescricaoSintomas);
+        TextView textViewDescricao = (TextView) findViewById(R.id.textViewMedicamentos);
         textViewDescricao.setText(descSintoma);
     }
 

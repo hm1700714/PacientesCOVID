@@ -38,5 +38,7 @@
     <string name="dados_do_paciente">Dados do Paciente</string>
     <string name="sintomas_obrigatorios">Campo Obrigatório</string>
     <string name="descricao_sintomas_obrigatoria">Campo Obrigatório</string>
+    <string name="temperatura_obrigatoria">Campo Obrigatório</string>
+    <string name="medicamentos_obrigatorios">Campo Obrigatório</string>
 
 </resources>
