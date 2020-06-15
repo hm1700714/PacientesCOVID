@@ -31,4 +31,5 @@
     <string name="horas_botao">Horas</string>
     <string name="dia_visita">Dia da Visita</string>
     <string name="horas_da_visitas">Horas da Visitas</string>
+    <string name="dados_do_paciente">Dados do Paciente</string>
 </resources>

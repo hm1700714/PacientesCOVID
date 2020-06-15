@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityRecebeDoentes">
+
+    <TextView
+        android:id="@+id/textViewLabelDadosPaciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/dados_do_paciente"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/textViewNomeUtente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        tools:text="Aqui aparece a mensagem do utilizador" />
+
+    <TextView
+        android:id="@+id/textViewMoradaUtente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        tools:text="Aqui aparece a mensagem do utilizador" />
+
+    <TextView
+        android:id="@+id/textViewContactoUtente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        tools:text="Aqui aparece a mensagem do utilizador" />
+
+    <TextView
+        android:id="@+id/textViewDataNascimentoUtente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        tools:text="Aqui aparece a mensagem do utilizador" />
+
+</LinearLayout>
+
+
+
+
+
+
+
