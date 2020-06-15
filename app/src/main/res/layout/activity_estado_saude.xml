@@ -7,7 +7,7 @@
     tools:context=".ActivityEstadoSaude">
 
     <Button
-        android:id="@+id/buttonAdicionarEstado"
+        android:id="@+id/buttonAdicionarSintomas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdicionarEstado" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdicionarSintomas" />
 
     <Button
         android:id="@+id/buttonVerSintoma"

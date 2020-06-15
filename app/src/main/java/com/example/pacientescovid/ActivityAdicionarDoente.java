@@ -87,12 +87,21 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
             editTextContacto.requestFocus();
             return;
         }
+/*
+        TextView viewDataNascimento = (TextView) findViewById(R.id.textViewDataNascimento);
+        String datanascimento = viewDataNascimento.getText().toString();
 
+        if(datanascimento.length() < 20){
+            //editTextContacto.setError(getString(R.string.preencherContacto));
+            editTextContacto.requestFocus();
+            return;
+        }
+*/
 
         intent.putExtra("nome", nome);
         intent.putExtra("morada", morada);
         intent.putExtra("contacto", contacto);
-        //intent.putExtra(App.IDADE, idade);
+        //intent.putExtra("datanascimento", datanascimento);
 
         startActivity(intent);
 

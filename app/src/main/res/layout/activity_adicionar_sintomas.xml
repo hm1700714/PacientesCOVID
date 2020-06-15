@@ -47,10 +47,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonAdicionarEstado"
+        android:id="@+id/buttonAdicionarSintomas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:onClick="enviaSintomas"
         android:text="@string/adicionar_sintomas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

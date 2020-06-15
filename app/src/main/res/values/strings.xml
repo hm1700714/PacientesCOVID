@@ -36,4 +36,7 @@
     <string name="dia_visita">Dia da Visita</string>
     <string name="horas_da_visitas">Horas da Visitas</string>
     <string name="dados_do_paciente">Dados do Paciente</string>
+    <string name="sintomas_obrigatorios">Campo Obrigatório</string>
+    <string name="descricao_sintomas_obrigatoria">Campo Obrigatório</string>
+
 </resources>
