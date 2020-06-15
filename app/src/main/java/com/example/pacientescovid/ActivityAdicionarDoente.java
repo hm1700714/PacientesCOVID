@@ -3,10 +3,12 @@ package com.example.pacientescovid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -50,5 +52,52 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
 
         datePickerDialog.show();
     }
+
+    public void enviaMensagem(View view) {
+
+        Intent intent = new Intent(this, ActivityRecebeDoentes.class);
+
+        //Permite ir buscar a caixa de edição de texto
+
+        EditText editTextNome = (EditText) findViewById(R.id.TestInputEditTextInserirNome);
+        String nome = editTextNome.getText().toString();
+
+        //verificação de dados para o nome
+
+        if(nome.length() == 0){
+            editTextNome.setError(getString(R.string.preencherNome));
+            editTextNome.requestFocus();
+            return;
+        }
+
+        EditText editTextMorada = (EditText) findViewById(R.id.TestInputEditTextInserirMorada);
+        String morada = editTextMorada.getText().toString();
+
+        if(morada.length() < 9){
+            editTextMorada.setError(getString(R.string.preencherMorada));
+            editTextMorada.requestFocus();
+            return;
+        }
+
+        EditText editTextContacto = (EditText) findViewById(R.id.TestInputEditTextInserirContacto);
+        String contacto = editTextContacto.getText().toString();
+
+        if(contacto.length() < 9){
+            editTextContacto.setError(getString(R.string.preencherContacto));
+            editTextContacto.requestFocus();
+            return;
+        }
+
+
+        intent.putExtra("nome", nome);
+        intent.putExtra("morada", morada);
+        intent.putExtra("contacto", contacto);
+        //intent.putExtra(App.IDADE, idade);
+
+        startActivity(intent);
+
+        //todo: enviar mensagem
+    }
+
 
 }

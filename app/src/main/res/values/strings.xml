@@ -28,6 +28,10 @@
     <string name="sintoma">Sintoma(s)</string>
     <string name="descricao_sintomas">Descrição dos Sintomas</string>
     <string name="data_botao">Data</string>
+    <string name="preencherNome">É necessário preencher o Nome.</string>
+    <string name="preencherMorada">É necessário preencher a Morada.</string>
+    <string name="preencherContacto">Contacto obrigatório!</string>
+    <string name="ContactoErrado">Contacto Inválido</string>
     <string name="horas_botao">Horas</string>
     <string name="dia_visita">Dia da Visita</string>
     <string name="horas_da_visitas">Horas da Visitas</string>
