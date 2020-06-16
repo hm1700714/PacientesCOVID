@@ -60,39 +60,31 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMorada">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TestInputEditTextInserirTemperatura"
+            android:id="@+id/TestInputEditTextInserirContacto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/contacto_do_utente"
-            android:inputType="number" />
+            android:hint="@string/contacto_do_utente" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textViewDataNascimento"
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/data_de_nascimento"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAdicionarSintomas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTemperatura"
-        app:layout_constraintVertical_bias="0.037" />
-
-    <Button
-        android:id="@+id/buttonDataNascimento"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutDataNascimento"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="256dp"
-        android:text="@string/data_botao"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewDataNascimento"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdicionarSintomas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTemperatura">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TestInputEditTextInserirDataNascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/data_de_nascimento" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonAdicionarSintomas"

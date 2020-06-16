@@ -22,7 +22,7 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_doente);
-
+/*
         dataButton2 = findViewById(R.id.buttonDataNascimento);
         dataTextView = findViewById(R.id.textViewDataNascimento);
 
@@ -32,8 +32,10 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
                 DataNascimentoButton();
             }
         });
-    }
 
+ */
+    }
+/*
     private void DataNascimentoButton(){
 
         Calendar calendario = Calendar.getInstance();
@@ -52,6 +54,8 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
 
         datePickerDialog.show();
     }
+
+ */
 
     public void enviaMensagem(View view) {
 
@@ -87,21 +91,21 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
             editTextContacto.requestFocus();
             return;
         }
-/*
-        TextView viewDataNascimento = (TextView) findViewById(R.id.textViewDataNascimento);
-        String datanascimento = viewDataNascimento.getText().toString();
 
-        if(datanascimento.length() < 20){
-            //editTextContacto.setError(getString(R.string.preencherContacto));
-            editTextContacto.requestFocus();
+        EditText editTextDataNascimento = (EditText) findViewById(R.id.TestInputEditTextInserirDataNascimento);
+        String datanascimento = editTextDataNascimento.getText().toString();
+
+        if(datanascimento.length() < 15){
+            editTextDataNascimento.setError(getString(R.string.Data_obrigatoria));
+            editTextDataNascimento.requestFocus();
             return;
         }
-*/
+
 
         intent.putExtra("nome", nome);
         intent.putExtra("morada", morada);
         intent.putExtra("contacto", contacto);
-        //intent.putExtra("datanascimento", datanascimento);
+        intent.putExtra("datanascimento", datanascimento);
 
         startActivity(intent);
 

@@ -40,5 +40,6 @@
     <string name="descricao_sintomas_obrigatoria">Campo Obrigatório</string>
     <string name="temperatura_obrigatoria">Campo Obrigatório</string>
     <string name="medicamentos_obrigatorios">Campo Obrigatório</string>
+    <string name="Data_obrigatoria">Data de Nascimento Obrigatória</string>
 
 </resources>

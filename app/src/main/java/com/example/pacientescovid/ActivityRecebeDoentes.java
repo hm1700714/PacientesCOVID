@@ -27,9 +27,9 @@ public class ActivityRecebeDoentes extends AppCompatActivity {
         TextView textViewContactoUtente = (TextView) findViewById(R.id.textViewContactoUtente);
         textViewContactoUtente.setText(contacto);
 
-        //String datanascimento = intent.getStringExtra("datanascimento");
-        //TextView textViewDataNascimento = (TextView) findViewById(R.id.textViewContactoUtente);
-        //textViewDataNascimento.setText(datanascimento);
+        String datanascimento = intent.getStringExtra("datanascimento");
+        TextView textViewDataNascimento = (TextView) findViewById(R.id.textViewDataNascimentoUtente);
+        textViewDataNascimento.setText(datanascimento);
 
     }
 }
