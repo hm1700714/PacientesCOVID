@@ -2,20 +2,12 @@ package com.example.pacientescovid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
-
-import java.util.Calendar;
 
 public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
 
@@ -26,7 +18,7 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_estado_saude);
-
+/*
         dataButton = findViewById(R.id.buttonDataSaude);
         horasButton = findViewById(R.id.buttonHoraSaude);
         dataTextView = findViewById(R.id.textViewDiaVisita);
@@ -45,8 +37,9 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
                 testeHorasButton();
             }
         });
+ */
     }
-
+/*
     private void testeDataButton(){
 
         Calendar calendario = Calendar.getInstance();
@@ -95,10 +88,16 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
         timePickerDialog.show();
     }
 
-
+*/
     public void enviaEstadoSaude(View view) {
 
         Intent intent = new Intent(this, ActivityRecebeEstadoSaude.class);
+
+
+
+
+
+
 
         //Permite ir buscar a caixa de edição de texto
 

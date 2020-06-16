@@ -17,6 +17,28 @@ tools:context=".ActivityRecebeEstadoSaude">
     android:textColor="@android:color/holo_red_dark" />
 
     <TextView
+        android:id="@+id/textViewDiaVisita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        tools:text="Aqui aparece a mensagem do utilizador" />
+
+    <TextView
+        android:id="@+id/textViewHoraVisita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        tools:text="Aqui aparece a mensagem do utilizador" />
+
+    <TextView
         android:id="@+id/textViewTemperatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

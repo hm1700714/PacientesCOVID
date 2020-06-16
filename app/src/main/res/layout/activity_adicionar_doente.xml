@@ -47,7 +47,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutContactoUtente"
+        android:id="@+id/textInputLayoutTemperatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -78,7 +78,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonAdicionarSintomas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutContactoUtente"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTemperatura"
         app:layout_constraintVertical_bias="0.037" />
 
     <Button

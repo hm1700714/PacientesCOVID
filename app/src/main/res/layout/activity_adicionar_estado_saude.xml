@@ -6,45 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ActivityAdicionarEstadoSaude">
 
-    <Button
-        android:id="@+id/buttonHoraSaude"
-        android:layout_width="80dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/horas_botao"
-        app:layout_constraintEnd_toStartOf="@+id/textViewHoraVisita"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDataSaude" />
-
-    <TextView
-        android:id="@+id/textViewDiaVisita"
-        android:layout_width="280dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="@string/dia_da_visita"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewHoraVisita"
-        android:layout_width="280dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="@string/horas_da_visitas"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDiaVisita" />
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutContactoUtente"
+        android:id="@+id/textInputLayoutTemperatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -54,7 +17,7 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHoraVisita">
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutDiaVisita">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TestInputEditTextInserirTemperatura"
@@ -75,7 +38,7 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutContactoUtente">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTemperatura">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TestInputEditTextInserirMedicamentos"
@@ -96,17 +59,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMedicamentos" />
 
-    <Button
-        android:id="@+id/buttonDataSaude"
-        android:layout_width="80dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/data_botao"
-        app:layout_constraintEnd_toStartOf="@+id/textViewDiaVisita"
-        app:layout_constraintHorizontal_bias="0.164"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutDiaVisita"
+        android:layout_width="392dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHoraVisita">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextInserirDiaVisita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/dia_da_visita" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutHoraVisita"
+        android:layout_width="392dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextInserirHoraVisita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hora_da_visita" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
