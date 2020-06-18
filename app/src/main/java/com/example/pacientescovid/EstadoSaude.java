@@ -6,6 +6,24 @@ public class EstadoSaude {
     private String diaVisita;
     private String Temperatura;
     private String Medicamentos;
+    private long idDoente = -1;
+    private String Doente = null;
+
+    public long getIdDoente() {
+        return idDoente;
+    }
+
+    public void setIdDoente(long idDoente) {
+        this.idDoente = idDoente;
+    }
+
+    public String getDoente() {
+        return Doente;
+    }
+
+    public void setDoente(String doente) {
+        Doente = doente;
+    }
 
     public long getId() {
         return id;
