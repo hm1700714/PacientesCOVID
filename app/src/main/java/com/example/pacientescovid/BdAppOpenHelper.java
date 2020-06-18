@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class BdAppOpenHelper implements SQLiteOpenHelper {
+public class BdAppOpenHelper extends SQLiteOpenHelper {
 
-    public static final String NOME_BASE_DADOS = "livros.db";
+    public static final String NOME_BASE_DADOS = "App.db";
     private static final int VERSAO_BASE_DADOS = 1;
     private static final boolean DESENVOLVIMENTO = true;
 
@@ -20,7 +20,7 @@ public class BdAppOpenHelper implements SQLiteOpenHelper {
      *
      * @param context to use for locating paths to the the database
      */
-    public BdLivrosOpenHelper(@Nullable Context context) {
+    public BdAppOpenHelper(@Nullable Context context) {
         super(context, NOME_BASE_DADOS, null, VERSAO_BASE_DADOS);
     }
 
@@ -32,17 +32,25 @@ public class BdAppOpenHelper implements SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        BdTableCategorias tabelaCategorias = new BdTableCategorias(db);
-        tabelaCategorias.cria();
+        BdTableSintomas tabelaSintomas = new BdTableSintomas(db);
+        tabelaSintomas.cria();
 
-        BdTableLivros tabelaLivros = new BdTableLivros(db);
-        tabelaLivros.cria();
+        BdTableDoentes tabelaDoentes = new BdTableDoentes(db);
+        tabelaDoentes.cria();
 
+        BdTableEstadoSaude tabelaEstadoSaude = new BdTableEstadoSaude(db);
+        tabelaEstadoSaude.cria();
+
+        BdTableSintomasPresentes tabelaSP = new BdTableSintomasPresentes(db);
+        tabelaSP.cria();
+
+        /*
         if (DESENVOLVIMENTO) {
             seedData(db);
         }
+        */
     }
-
+/*
     private void seedData(SQLiteDatabase db) {
         BdTableCategorias tabelaCategorias = new BdTableCategorias(db);
 
@@ -84,7 +92,7 @@ public class BdAppOpenHelper implements SQLiteOpenHelper {
         livro.setIdCategoria(idCatMisterio);
         tabelaLivros.insert(Converte.livroToContentValues(livro));
     }
-
+*/
     /**
      * Called when the database needs to be upgraded. The implementation
      * should use this method to drop tables, add tables, or do anything else it

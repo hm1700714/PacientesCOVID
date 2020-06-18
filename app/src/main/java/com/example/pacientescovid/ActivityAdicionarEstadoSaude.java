@@ -95,10 +95,6 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
 
 
 
-
-
-
-
         //Permite ir buscar a caixa de edição de texto
 
         EditText editTextTemperatura = (EditText) findViewById(R.id.TestInputEditTextInserirTemperatura);

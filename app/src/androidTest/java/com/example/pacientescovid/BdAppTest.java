@@ -45,34 +45,62 @@ public class BdAppTest {
     private long insereSintomas(BdTableSintomas tabelaSintomas, Sintomas sintomas) {
         long id = tabelaSintomas.insert(Converte.sintomasToContentValues(sintomas));
         assertNotEquals(-1, id);
-
         return id;
     }
 
 
+    private long insereSintomas(BdTableSintomas tabelaSintomas, String sintoma, String descricao) {
 
-    private long insereCategoria(BdTableCategorias tabelaCategorias, String descricao) {
-        Categoria categoria = new Categoria();
-        categoria.setDescricao(descricao);
+        Sintomas sintomas = new Sintomas();
+        sintomas.setSintoma(sintoma);
+        sintomas.setDescricaoSintoma(descricao);
 
-        return insereCategoria(tabelaCategorias, categoria);
+        return insereSintomas(tabelaSintomas, sintomas);
     }
 
-    private long insereLivro(SQLiteDatabase bdLivros, String titulo, String descCategoria) {
-        BdTableCategorias tabelaCategorias = new BdTableCategorias(bdLivros);
 
-        long idCategoria = insereCategoria(tabelaCategorias, descCategoria);
 
-        Livro livro = new Livro();
-        livro.setTitulo(titulo);
-        livro.setIdCategoria(idCategoria);
+    private long insereDoentes(BdTableDoentes tabelaDoentes, Doentes doentes) {
+        long id = tabelaDoentes.insert(Converte.doentesToContentValues(doentes));
+        assertNotEquals(-1, id);
+        return id;
+    }
 
-        BdTableLivros tabelaLivros = new BdTableLivros(bdLivros);
-        long id = tabelaLivros.insert(Converte.livroToContentValues(livro));
+
+    private long insereDoentes(BdTableDoentes tabelaDoentes, String nome, String morada, String contacto, String dnascimento ) {
+
+        Doentes doentes = new Doentes();
+        doentes.setNomeUtente(nome);
+        doentes.setMoradaUtente(morada);
+        doentes.setContactoUtente(contacto);
+        doentes.setDataNascimentoUtente(dnascimento);
+
+        return insereDoentes(tabelaDoentes, doentes);
+    }
+
+
+    private long insereEstadoSaude(SQLiteDatabase bdPacientes, String hora, String dia, String temperatura, String medicamentos,
+                                   String nome, String morada, String contacto, String dnascimento) {
+
+        BdTableDoentes tabelaDoentes = new BdTableDoentes(bdPacientes);
+
+        long idDoentes = insereDoentes(tabelaDoentes, nome, morada, contacto, dnascimento);
+
+        EstadoSaude estado = new EstadoSaude();
+        estado.setHoraVisita(hora);
+        estado.setDiaVisita(dia);
+        estado.setTemperatura(temperatura);
+        estado.setMedicamentos(medicamentos);
+        estado.setIdDoente(idDoentes);
+
+        BdTableEstadoSaude tabelaEstados = new BdTableEstadoSaude(bdPacientes);
+        long id = tabelaEstados.insert(Converte.estadosaudeToContentValues(estado));
         assertNotEquals(-1, id);
 
         return  id;
     }
+    
+
 
     @Test
     public void consegueInserirCategorias() {

@@ -79,8 +79,7 @@ public class Converte {
 
 
 
-
-    
+/*
     public static Livro cursorToLivro(Cursor cursor) {
         Livro livro = new Livro();
 
@@ -91,4 +90,6 @@ public class Converte {
 
         return livro;
     }
+*/
+
 }
