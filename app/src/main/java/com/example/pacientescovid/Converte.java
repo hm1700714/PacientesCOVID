@@ -78,6 +78,28 @@ public class Converte {
     }
 
 
+    public static ContentValues sintomasPresentesToContentValues(SintomasPresentes sPresentes) {
+        ContentValues valores = new ContentValues();
+
+        valores.put(BdTableSintomasPresentes.CAMPO_ID_SINTOMA, sPresentes.getIdSintoma());
+        valores.put(BdTableSintomasPresentes.CAMPO_ID_ESTADO_SAUDE, sPresentes.getIdEstado());
+
+        return valores;
+    }
+
+    public static SintomasPresentes contentValuesToSintomasPresentes(ContentValues valores) {
+        SintomasPresentes sintomas = new SintomasPresentes();
+
+        sintomas.setId(valores.getAsLong(BdTableSintomasPresentes._ID));
+        sintomas.setIdSintoma(valores.getAsLong(BdTableSintomasPresentes.CAMPO_ID_SINTOMA));
+        sintomas.setIdEstado(valores.getAsLong(BdTableSintomasPresentes.CAMPO_ID_ESTADO_SAUDE));
+
+        return sintomas;
+    }
+
+
+
+
 
 /*
     public static Livro cursorToLivro(Cursor cursor) {

@@ -80,16 +80,22 @@ public class BdTableSintomasPresentes implements BaseColumns {
      */
     public Cursor query(String[] columns, String selection,
                         String[] selectionArgs, String groupBy, String having,
-                        String orderBy) {
+                        String orderBy) {/*
         if (!Arrays.asList(columns).contains(CAMPO_CATEGORIA_COMPLETO)) {
             return db.query(NOME_TABELA, columns, selection, selectionArgs, groupBy, having, orderBy);
         }
 
+        */
         String campos = TextUtils.join(",", columns);
 
         String sql = "SELECT " + campos;
-        sql += " FROM " + NOME_TABELA + " INNER JOIN " + BdTableCategorias.NOME_TABELA;
+
+
+        sql += " FROM " + NOME_TABELA;
+
+        /* +" INNER JOIN "  + BdTableCategorias.NOME_TABELA;
         sql += " ON " + CAMPO_ID_CATEGORIA_COMPLETO + "=" + BdTableCategorias.CAMPO_ID_COMPLETO;
+        */
 
         if (selection != null) {
             sql += " WHERE " + selection;

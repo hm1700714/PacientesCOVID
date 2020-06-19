@@ -42,6 +42,7 @@ public class BdAppTest {
         return InstrumentationRegistry.getInstrumentation().getTargetContext();
     }
 
+
     private long insereSintomas(BdTableSintomas tabelaSintomas, Sintomas sintomas) {
         long id = tabelaSintomas.insert(Converte.sintomasToContentValues(sintomas));
         assertNotEquals(-1, id);
@@ -103,17 +104,17 @@ public class BdAppTest {
 
 
     @Test
-    public void consegueInserirCategorias() {
+    public void consegueInserirSintomas() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        BdTableCategorias tabelaCategorias = new BdTableCategorias(bdLivros);
+        BdTableSintomas tabelaSintomas = new BdTableSintomas(bdPacientes);
 
-        insereCategoria(tabelaCategorias, "Ação");
+        insereSintomas(tabelaSintomas, "Dores de Cabeça", "Fortes dores de cabeça, na parte do lobo frontal");
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
     @Test
