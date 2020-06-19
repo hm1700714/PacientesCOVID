@@ -220,35 +220,39 @@ public class BdAppTest {
         bdPacientes.close();
     }
 
-/*
+
 
     @Test
     public void consegueAlterarLivros() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        long idLivro = insereLivro(bdLivros, "O silêncio dos inocentes", "Thriller");
+        BdTableDoentes tabelaDoentes = new BdTableDoentes(bdPacientes);
 
-        BdTableLivros tabelaLivros = new BdTableLivros(bdLivros);
+        long idLivro = insereDoentes(tabelaDoentes, "Henrique Moreira", "Rua da Alegria, Guarda", "969696963", "13/10/1996");
 
-        Cursor cursor = tabelaLivros.query(BdTableLivros.TODOS_CAMPOS, BdTableLivros.CAMPO_ID_COMPLETO + "=?", new String[]{ String.valueOf(idLivro) }, null, null, null);
+        Cursor cursor = tabelaDoentes.query(BdTableDoentes.TODOS_CAMPOS, BdTableDoentes.CAMPO_ID_COMPLETO + "=?",
+                new String[]{ String.valueOf(idLivro) }, null, null, null);
         assertEquals(1, cursor.getCount());
 
         assertTrue(cursor.moveToNext());
-        Livro livro = Converte.cursorToLivro(cursor);
+        Doentes doentes = Converte.cursorToDoentes(cursor);
         cursor.close();
 
-        assertEquals("O silêncio dos inocentes", livro.getTitulo());
+        assertEquals("Henrique Moreira", doentes.getNomeUtente());
 
-        livro.setTitulo("O mistério do quarto secreto");
-        int registosAfetados = tabelaLivros.update(Converte.livroToContentValues(livro), BdTableLivros.CAMPO_ID_COMPLETO + "=?", new String[]{String.valueOf(livro.getId())});
+        doentes.setNomeUtente("Gonçalo Moreira");
+        int registosAfetados = tabelaDoentes.update(Converte.doentesToContentValues(doentes), BdTableDoentes.CAMPO_ID_COMPLETO + "=?",
+                new String[]{String.valueOf(doentes.getId())});
         assertEquals(1, registosAfetados);
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
+
+/*
     @Test
     public void consegueEliminarLivros() {
         Context appContext = getTargetContext();

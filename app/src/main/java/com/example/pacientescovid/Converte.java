@@ -99,19 +99,16 @@ public class Converte {
 
 
 
+    public static Doentes cursorToDoentes(Cursor cursor) {
+        Doentes doentes = new Doentes();
 
+        doentes.setId(cursor.getLong(cursor.getColumnIndex(BdTableDoentes._ID)));
+        doentes.setNomeUtente(cursor.getString(cursor.getColumnIndex(BdTableDoentes.CAMPO_NOME)));
+        doentes.setMoradaUtente(cursor.getString(cursor.getColumnIndex(BdTableDoentes.CAMPO_MORADA)));
+        doentes.setContactoUtente(cursor.getString(cursor.getColumnIndex(BdTableDoentes.CAMPO_CONTACTO)));
+        doentes.setDataNascimentoUtente(cursor.getString(cursor.getColumnIndex(BdTableDoentes.CAMPO_DATA_NASCIMENTO)));
 
-/*
-    public static Livro cursorToLivro(Cursor cursor) {
-        Livro livro = new Livro();
-
-        livro.setId(cursor.getLong(cursor.getColumnIndex(BdTableLivros._ID)));
-        livro.setTitulo(cursor.getString(cursor.getColumnIndex(BdTableLivros.CAMPO_TITULO)));
-        livro.setIdCategoria(cursor.getLong(cursor.getColumnIndex(BdTableLivros.CAMPO_ID_CATEGORIA)));
-        livro.setCategoria(cursor.getString(cursor.getColumnIndex(BdTableLivros.CAMPO_CATEGORIA)));
-
-        return livro;
+        return doentes;
     }
-*/
 
 }
