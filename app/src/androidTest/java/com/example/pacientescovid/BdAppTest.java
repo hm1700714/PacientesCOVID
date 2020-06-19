@@ -197,29 +197,30 @@ public class BdAppTest {
         bdPacientes.close();
     }
 
-/*
+
     @Test
-    public void consegueLerLivros() {
+    public void consegueLerDoentes() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        BdTableLivros tabelaLivros = new BdTableLivros(bdLivros);
+        BdTableDoentes tabelaDoentes = new BdTableDoentes(bdPacientes);
 
-        Cursor cursor = tabelaLivros.query(BdTableLivros.TODOS_CAMPOS, null, null, null, null, null);
+        Cursor cursor = tabelaDoentes.query(BdTableDoentes.TODOS_CAMPOS, null, null, null, null, null);
         int registos = cursor.getCount();
         cursor.close();
 
-        insereLivro(bdLivros, "O silêncio dos inocentes", "Thriller");
+        insereDoentes(tabelaDoentes, "Henrique Moreira", "Rua da Alegria, Guarda", "969696963", "13/10/1996");
 
-        cursor = tabelaLivros.query(BdTableLivros.TODOS_CAMPOS, null, null, null, null, null);
+        cursor = tabelaDoentes.query(BdTableDoentes.TODOS_CAMPOS, null, null, null, null, null);
         assertEquals(registos + 1, cursor.getCount());
         cursor.close();
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
+/*
 
     @Test
     public void consegueAlterarLivros() {
