@@ -15,6 +15,14 @@ public class ActivityRecebeEstadoSaude extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        String horaVisita = intent.getStringExtra("horaVisita");
+        TextView textViewHoraVisita = (TextView) findViewById(R.id.textViewHoraVisita);
+        textViewHoraVisita.setText(horaVisita);
+
+        String diaVisita = intent.getStringExtra("diaVisita");
+        TextView textViewDiaVisita = (TextView) findViewById(R.id.textViewDiaVisita);
+        textViewDiaVisita.setText(diaVisita);
+
         String temperatura = intent.getStringExtra("febre");
         TextView textViewTemperatura = (TextView) findViewById(R.id.textViewTemperatura);
         textViewTemperatura.setText(temperatura);

@@ -99,7 +99,7 @@ public class BdAppTest {
 
         return  id;
     }
-    
+
 
 
     @Test
@@ -175,6 +175,8 @@ public class BdAppTest {
 
         bdLivros.close();
     }
+
+
 
     @Test
     public void consegueInserirLivros() {

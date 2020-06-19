@@ -93,9 +93,27 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
 
         Intent intent = new Intent(this, ActivityRecebeEstadoSaude.class);
 
-
-
         //Permite ir buscar a caixa de edição de texto
+
+        EditText editTextHoraVisita = (EditText) findViewById(R.id.TextInputEditTextInserirHoraVisita);
+        String horaVisita = editTextHoraVisita.getText().toString();
+
+        //verificação de dados para o nome
+
+        if(horaVisita.length() == 0){
+            editTextHoraVisita.setError(getString(R.string.Hora_visita_obrigatoria));
+            editTextHoraVisita.requestFocus();
+            return;
+        }
+
+        EditText editTextDiaVisita = (EditText) findViewById(R.id.TextInputEditTextInserirDiaVisita);
+        String diaVisita = editTextDiaVisita.getText().toString();
+
+        if(diaVisita.length() == 0){
+            editTextDiaVisita.setError(getString(R.string.Dia_visita_obrigatoria));
+            editTextDiaVisita.requestFocus();
+            return;
+        }
 
         EditText editTextTemperatura = (EditText) findViewById(R.id.TestInputEditTextInserirTemperatura);
         String temperatura = editTextTemperatura.getText().toString();
@@ -117,7 +135,8 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
             return;
         }
 
-
+        intent.putExtra("horaVisita", horaVisita);
+        intent.putExtra("diaVisita", diaVisita);
         intent.putExtra("febre", temperatura);
         intent.putExtra("medicamentos", medicamentos);
 

@@ -41,5 +41,7 @@
     <string name="temperatura_obrigatoria">Campo Obrigatório</string>
     <string name="medicamentos_obrigatorios">Campo Obrigatório</string>
     <string name="Data_obrigatoria">Data de Nascimento Obrigatória</string>
+    <string name="Hora_visita_obrigatoria">Campo Obrigatório</string>
+    <string name="Dia_visita_obrigatoria">Campo Obrigatório</string>
 
 </resources>
