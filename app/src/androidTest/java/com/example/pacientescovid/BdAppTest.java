@@ -181,20 +181,23 @@ public class BdAppTest {
         bdPacientes.close();
     }
 
-    /*
+
 
     @Test
-    public void consegueInserirLivros() {
+    public void consegueInserirDoentes() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        insereLivro(bdLivros, "O Intruso", "Terror");
+        BdTableDoentes tabelaDoentes = new BdTableDoentes(bdPacientes);
 
-        bdLivros.close();
+        insereDoentes(tabelaDoentes, "Henrique Moreira", "Rua da Alegria, Guarda", "969696963","13/10/1996");
+
+        bdPacientes.close();
     }
 
+/*
     @Test
     public void consegueLerLivros() {
         Context appContext = getTargetContext();
@@ -216,6 +219,7 @@ public class BdAppTest {
 
         bdLivros.close();
     }
+
 
     @Test
     public void consegueAlterarLivros() {
