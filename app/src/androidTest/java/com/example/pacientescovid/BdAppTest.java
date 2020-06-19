@@ -27,6 +27,7 @@ public class BdAppTest {
         getTargetContext().deleteDatabase(BdAppOpenHelper.NOME_BASE_DADOS);
     }
 
+
     @Test
     public void consegueAbrirBaseDados() {
         // Context of the app under test.
@@ -37,6 +38,7 @@ public class BdAppTest {
         assertTrue(bdApp.isOpen());
         bdApp.close();
     }
+
 
     private Context getTargetContext() {
         return InstrumentationRegistry.getInstrumentation().getTargetContext();
@@ -60,7 +62,6 @@ public class BdAppTest {
     }
 
 
-
     private long insereDoentes(BdTableDoentes tabelaDoentes, Doentes doentes) {
         long id = tabelaDoentes.insert(Converte.doentesToContentValues(doentes));
         assertNotEquals(-1, id);
@@ -82,7 +83,6 @@ public class BdAppTest {
 
     private long insereEstadoSaude(SQLiteDatabase bdPacientes, String hora, String dia, String temperatura, String medicamentos,
                                    String nome, String morada, String contacto, String dnascimento) {
-
         BdTableDoentes tabelaDoentes = new BdTableDoentes(bdPacientes);
 
         long idDoentes = insereDoentes(tabelaDoentes, nome, morada, contacto, dnascimento);
@@ -102,7 +102,6 @@ public class BdAppTest {
     }
 
 
-
     @Test
     public void consegueInserirSintomas() {
         Context appContext = getTargetContext();
@@ -117,67 +116,72 @@ public class BdAppTest {
         bdPacientes.close();
     }
 
+
     @Test
-    public void consegueLerCategorias() {
+    public void consegueLerSintomas() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        BdTableCategorias tabelaCategorias = new BdTableCategorias(bdLivros);
+        BdTableSintomas tabelaSintomas = new BdTableSintomas(bdPacientes);
 
-        Cursor cursor = tabelaCategorias.query(BdTableCategorias.TODOS_CAMPOS, null, null, null, null, null);
+        Cursor cursor = tabelaSintomas.query(BdTableSintomas.TODOS_CAMPOS, null, null, null, null, null);
         int registos = cursor.getCount();
         cursor.close();
 
-        insereCategoria(tabelaCategorias, "Sci-fi");
+        insereSintomas(tabelaSintomas, "Dores de Cabeça", "Fortes dores de cabeça, na parte do lobo frontal");
 
-        cursor = tabelaCategorias.query(BdTableCategorias.TODOS_CAMPOS, null, null, null, null, null);
+        cursor = tabelaSintomas.query(BdTableSintomas.TODOS_CAMPOS, null, null, null, null, null);
         assertEquals(registos + 1, cursor.getCount());
         cursor.close();
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
+
     @Test
-    public void consegueAlterarCategorias() {
+    public void consegueAlterarSintomas() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        BdTableCategorias tabelaCategorias = new BdTableCategorias(bdLivros);
+        BdTableSintomas tabelaSintomas = new BdTableSintomas(bdPacientes);
 
-        Categoria categoria = new Categoria();
-        categoria.setDescricao("Romanc");
+        Sintomas sintomas = new Sintomas();
+        sintomas.setSintoma("Dificuldades em respirar");
+        sintomas.setDescricaoSintoma("Devido a ... o paciente tem dificuldades em manter a sua respiração estável");
 
-        long id = insereCategoria(tabelaCategorias, categoria);
+        long id = insereSintomas(tabelaSintomas, sintomas);
 
-        categoria.setDescricao("Romance");
-        int registosAfetados = tabelaCategorias.update(Converte.categoriaToContentValues(categoria), BdTableCategorias._ID + "=?", new String[]{String.valueOf(id)});
+        sintomas.setSintoma("Dificuldades");
+
+        int registosAfetados = tabelaSintomas.update(Converte.sintomasToContentValues(sintomas), BdTableSintomas._ID + "=?", new String[]{String.valueOf(id)});
         assertEquals(1, registosAfetados);
 
-        bdLivros.close();
+        bdPacientes.close();
     }
+
 
     @Test
-    public void consegueEliminarCategorias() {
+    public void consegueEliminarSintomas() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        BdTableCategorias tabelaCategorias = new BdTableCategorias(bdLivros);
+        BdTableSintomas tabelaSintomas = new BdTableSintomas(bdPacientes);
 
-        long id = insereCategoria(tabelaCategorias, "TESTE");
+        long id = insereSintomas(tabelaSintomas, "TESTE", "TESTE");
 
-        int registosEliminados = tabelaCategorias.delete(BdTableCategorias._ID + "=?", new String[]{String.valueOf(id)});
+        int registosEliminados = tabelaSintomas.delete(BdTableSintomas._ID + "=?", new String[]{String.valueOf(id)});
         assertEquals(1, registosEliminados);
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
-
+    /*
 
     @Test
     public void consegueInserirLivros() {
@@ -255,4 +259,6 @@ public class BdAppTest {
 
         bdLivros.close();
     }
+
+ */
 }

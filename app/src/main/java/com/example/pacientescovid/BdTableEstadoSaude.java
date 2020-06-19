@@ -13,8 +13,8 @@ public class BdTableEstadoSaude implements BaseColumns {
 
     public static final String CAMPO_HORA_VISITA = "hora_visita";
     public static final String CAMPO_DIA_VISITA = "dia_visita";
-    public static final String CAMPO_TEMPERATURA = "categoria";
-    public static final String CAMPO_MEDICAMENTOS = "categoria";
+    public static final String CAMPO_TEMPERATURA = "temperatura";
+    public static final String CAMPO_MEDICAMENTOS = "medicamentos";
     public static final String CAMPO_DOENTE = "doente";
     public static final String CAMPO_ID_DOENTE = "id_doente";
 

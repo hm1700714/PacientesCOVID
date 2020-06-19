@@ -37,7 +37,7 @@ public class BdTableDoentes implements BaseColumns {
                 CAMPO_NOME + " TEXT NOT NULL," +
                 CAMPO_MORADA + " TEXT NOT NULL," +
                 CAMPO_CONTACTO + " INTEGER NOT NULL," +
-                CAMPO_DATA_NASCIMENTO + "TEXT NOT NULL," + ")");
+                CAMPO_DATA_NASCIMENTO + " TEXT NOT NULL" + ")");
     }
 
     /**
