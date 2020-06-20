@@ -111,4 +111,18 @@ public class Converte {
         return doentes;
     }
 
+    public static EstadoSaude cursorToEstadoSaude(Cursor cursor) {
+        EstadoSaude estado = new EstadoSaude();
+
+        estado.setId(cursor.getLong(cursor.getColumnIndex(BdTableEstadoSaude._ID)));
+        estado.setHoraVisita(cursor.getString(cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_HORA_VISITA)));
+        estado.setDiaVisita(cursor.getString(cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_DIA_VISITA)));
+        estado.setTemperatura(cursor.getString(cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_TEMPERATURA)));
+        estado.setMedicamentos(cursor.getString(cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_MEDICAMENTOS)));
+        estado.setDoente(cursor.getString(cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_DOENTE)));
+        estado.setIdDoente(cursor.getLong(cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_ID_DOENTE)));
+
+        return estado;
+    }
+
 }

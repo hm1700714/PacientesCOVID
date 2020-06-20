@@ -310,34 +310,36 @@ public class BdAppTest {
 
         bdPacientes.close();
     }
-/*
+
     @Test
-    public void consegueAlterarLivros() {
+    public void consegueAlterarEstadoSaude() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        long idLivro = insereLivro(bdLivros, "O silêncio dos inocentes", "Thriller");
+        long idDoentes = insereEstadoSaude(bdPacientes,  "14:30", "21/07/2020", "35", "Ben-U-Ron", "Horácio",
+                "rua das azeitonas", "939393936", "10/04/1990");
 
-        BdTableLivros tabelaLivros = new BdTableLivros(bdLivros);
+        BdTableEstadoSaude tabelaEstados= new BdTableEstadoSaude(bdPacientes);
 
-        Cursor cursor = tabelaLivros.query(BdTableLivros.TODOS_CAMPOS, BdTableLivros.CAMPO_ID_COMPLETO + "=?", new String[]{ String.valueOf(idLivro) }, null, null, null);
+        Cursor cursor = tabelaEstados.query(BdTableEstadoSaude.TODOS_CAMPOS, BdTableEstadoSaude.CAMPO_ID_COMPLETO + "=?", new String[]{ String.valueOf(idDoentes) }, null, null, null);
         assertEquals(1, cursor.getCount());
 
         assertTrue(cursor.moveToNext());
-        Livro livro = Converte.cursorToLivro(cursor);
+        EstadoSaude estado = Converte.cursorToEstadoSaude(cursor);
         cursor.close();
 
-        assertEquals("O silêncio dos inocentes", livro.getTitulo());
+        assertEquals("Ben-U-Ron", estado.getMedicamentos());
 
-        livro.setTitulo("O mistério do quarto secreto");
-        int registosAfetados = tabelaLivros.update(Converte.livroToContentValues(livro), BdTableLivros.CAMPO_ID_COMPLETO + "=?", new String[]{String.valueOf(livro.getId())});
+        estado.setMedicamentos("Brufen");
+        int registosAfetados = tabelaEstados.update(Converte.estadosaudeToContentValues(estado), BdTableEstadoSaude.CAMPO_ID_COMPLETO + "=?", new String[]{String.valueOf(estado.getId())});
         assertEquals(1, registosAfetados);
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
+/*
     @Test
     public void consegueEliminarLivros() {
         Context appContext = getTargetContext();
