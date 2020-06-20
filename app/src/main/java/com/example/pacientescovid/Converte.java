@@ -56,7 +56,7 @@ public class Converte {
         valores.put(BdTableEstadoSaude.CAMPO_TEMPERATURA, estado.getTemperatura());
         valores.put(BdTableEstadoSaude.CAMPO_MEDICAMENTOS, estado.getMedicamentos());
 
-        valores.put(BdTableEstadoSaude.CAMPO_DOENTE, estado.getDoente());
+        //valores.put(BdTableEstadoSaude.CAMPO_DOENTE, estado.getDoente());
         valores.put(BdTableEstadoSaude.CAMPO_ID_DOENTE, estado.getIdDoente());
 
         return valores;

@@ -83,6 +83,7 @@ public class BdAppTest {
 
     private long insereEstadoSaude(SQLiteDatabase bdPacientes, String hora, String dia, String temperatura, String medicamentos,
                                    String nome, String morada, String contacto, String dnascimento) {
+
         BdTableDoentes tabelaDoentes = new BdTableDoentes(bdPacientes);
 
         long idDoentes = insereDoentes(tabelaDoentes, nome, morada, contacto, dnascimento);
@@ -94,12 +95,14 @@ public class BdAppTest {
         estado.setMedicamentos(medicamentos);
         estado.setIdDoente(idDoentes);
 
-        BdTableEstadoSaude tabelaEstados = new BdTableEstadoSaude(bdPacientes);
-        long id = tabelaEstados.insert(Converte.estadosaudeToContentValues(estado));
+        BdTableEstadoSaude tabelaEstadoSaude = new BdTableEstadoSaude(bdPacientes);
+        long id = tabelaEstadoSaude.insert(Converte.estadosaudeToContentValues(estado));
         assertNotEquals(-1, id);
 
         return  id;
     }
+
+
 
 
     @Test
@@ -270,19 +273,21 @@ public class BdAppTest {
         bdPacientes.close();
 
     }
-/* 
+
     @Test
-    public void consegueInserirLivros() {
+    public void consegueInserirEstadoSaude() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPacientes = openHelper.getWritableDatabase();
 
-        insereLivro(bdLivros, "O Intruso", "Terror");
+        insereEstadoSaude(bdPacientes, "14:30", "21/07/2020", "35", "Ben-U-Ron", "Horácio",
+                "rua das azeitonas", "939393936", "10/04/1990");
 
-        bdLivros.close();
+        bdPacientes.close();
     }
 
+/*
     @Test
     public void consegueLerLivros() {
         Context appContext = getTargetContext();
