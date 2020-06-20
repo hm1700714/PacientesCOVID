@@ -339,22 +339,23 @@ public class BdAppTest {
         bdPacientes.close();
     }
 
-/*
+
     @Test
     public void consegueEliminarLivros() {
         Context appContext = getTargetContext();
 
-        BdLivrosOpenHelper openHelper = new BdLivrosOpenHelper(appContext);
-        SQLiteDatabase bdLivros = openHelper.getWritableDatabase();
+        BdAppOpenHelper openHelper = new BdAppOpenHelper(appContext);
+        SQLiteDatabase bdPaciente = openHelper.getWritableDatabase();
 
-        long id = insereLivro(bdLivros, "O silêncio dos inocentes", "Thriller");
+        long id = insereEstadoSaude(bdPaciente, "14:30", "21/07/2020", "35", "Ben-U-Ron", "Horácio",
+                "rua das azeitonas", "939393936", "10/04/1990");
 
-        BdTableLivros tabelaLivros = new BdTableLivros(bdLivros);
-        int registosEliminados = tabelaLivros.delete(BdTableLivros._ID + "=?", new String[]{String.valueOf(id)});
+        BdTableEstadoSaude tabelaEstado = new BdTableEstadoSaude(bdPaciente);
+        int registosEliminados = tabelaEstado.delete(BdTableEstadoSaude._ID + "=?", new String[]{String.valueOf(id)});
         assertEquals(1, registosEliminados);
 
-        bdLivros.close();
+        bdPaciente.close();
     }
-*/
+
 
 }
