@@ -26,4 +26,9 @@ public class ActivityDoentes extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityAdicionarDoente.class);
         startActivity(intent);
     }
+
+    public void passaVerDoente (View view){
+        Intent intent = new Intent(this, ActivityMostraDoentes.class);
+        startActivity(intent);
+    }
 }

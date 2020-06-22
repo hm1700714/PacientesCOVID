@@ -2,19 +2,24 @@ package com.example.pacientescovid;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.ViewHolderDoentes> {
+
     private final Context context;
     private Cursor cursor = null;
 
-    public void setCursor(){
+    public void setCursor(Cursor cursor) {
         if (cursor != this.cursor) {
             this.cursor = cursor;
             notifyDataSetChanged();
@@ -27,14 +32,14 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
 
     @NonNull
     @Override
-    public AdaptadorDoentes.ViewHolderDoentes onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderDoentes onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemDoente = LayoutInflater.from(context).inflate(R.layout.item_doente, parent, false);
 
         return new ViewHolderDoentes(itemDoente);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdaptadorDoentes.ViewHolderDoentes holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderDoentes holder, int position) {
         cursor.moveToPosition(position);
         Doentes doentes = Converte.cursorToDoentes(cursor);
         holder.setDoente(doentes);
@@ -42,7 +47,7 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
 
     @Override
     public int getItemCount() {
-        if(cursor == null) {
+        if (cursor == null) {
             return 0;
         }
         return cursor.getCount();
@@ -50,7 +55,8 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
 
     private ViewHolderDoentes viewHolderDoenteSelecionado = null;
 
-    public class ViewHolderDoentes extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolderDoentes extends RecyclerView.ViewHolder{
+
         private Doentes doentes = null;
 
         private final TextView textViewNome;
@@ -61,15 +67,16 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
         public ViewHolderDoentes(@NonNull View itemView) {
             super(itemView);
 
-            textViewNome = (TextView)itemView.findViewById(R.id.textViewNome);
-            textViewMorada = (TextView)itemView.findViewById(R.id.textViewMorada);
-            textViewContacto = (TextView)itemView.findViewById(R.id.textViewContacto);
-            textViewDNascimento = (TextView)itemView.findViewById(R.id.textViewDataNascimento);
+            textViewNome = (TextView) itemView.findViewById(R.id.textViewNome);
+            textViewMorada = (TextView) itemView.findViewById(R.id.textViewMorada);
+            textViewContacto = (TextView) itemView.findViewById(R.id.textViewContacto);
+            textViewDNascimento = (TextView) itemView.findViewById(R.id.textViewDataNascimento);
 
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
         }
 
         public void setDoente(Doentes doente) {
+
             this.doentes = doente;
 
             textViewNome.setText(doente.getNomeUtente());
@@ -78,11 +85,13 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
             textViewDNascimento.setText(doente.getDataNascimentoUtente());
         }
 
+
         /**
          * Called when a view has been clicked.
          *
          * @param v The view that was clicked.
          */
+        /*
         @Override
         public void onClick(View v) {
             if (viewHolderDoenteSelecionado == this) {
@@ -95,11 +104,11 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
 
             viewHolderDoenteSelecionado = this;
             seleciona();
-/*
+
             MainActivity activity = (MainActivity) AdaptadorDoentes.this.context;
             activity.livroAlterado(livro);
 
- */
+
         }
 
         private void seleciona() {
@@ -109,5 +118,7 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
         private void desSeleciona() {
             itemView.setBackgroundResource(android.R.color.white);
         }
+        */
     }
 }
+

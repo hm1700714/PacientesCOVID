@@ -27,8 +27,8 @@ public class PacientesContentProvider extends ContentProvider {
     public static final Uri ENDERECO_ESTADOSAUDE = Uri.withAppendedPath(ENDERECO_BASE, ESTADOSAUDE);
     public static final Uri ENDERECO_SPRESENTE = Uri.withAppendedPath(ENDERECO_BASE, SPRESENTE);
 
-    private static final int URI_DOENTES = 100;
-    private static final int URI_ID_DOENTES = 101;
+    private static final int URI_DOENTES = 200;
+    private static final int URI_ID_DOENTES = 201;
 
     private static final int URI_SINTOMAS = 300;
     private static final int URI_ID_SINTOMAS = 301;

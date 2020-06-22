@@ -1,15 +1,23 @@
 package com.example.pacientescovid;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 
@@ -32,12 +40,10 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
                 DataNascimentoButton();
             }
         });
-
  */
     }
 /*
     private void DataNascimentoButton(){
-
         Calendar calendario = Calendar.getInstance();
 
         int ano = calendario.get(Calendar.YEAR);
@@ -54,12 +60,10 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
 
         datePickerDialog.show();
     }
-
  */
-
     public void enviaMensagem(View view) {
 
-        Intent intent = new Intent(this, ActivityRecebeDoentes.class);
+        //Intent intent = new Intent(this, ActivityRecebeDoentes.class);
 
         //Permite ir buscar a caixa de edição de texto
 
@@ -83,7 +87,7 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
             return;
         }
 
-        EditText editTextContacto = (EditText) findViewById(R.id.TestInputEditTextInserirTemperatura);
+        EditText editTextContacto = (EditText) findViewById(R.id.TestInputEditTextInserirContacto);
         String contacto = editTextContacto.getText().toString();
 
         if(contacto.length() < 9){
@@ -95,22 +99,42 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
         EditText editTextDataNascimento = (EditText) findViewById(R.id.TestInputEditTextInserirDataNascimento);
         String datanascimento = editTextDataNascimento.getText().toString();
 
-        if(datanascimento.length() < 15){
+        if(datanascimento.length() < 6){
             editTextDataNascimento.setError(getString(R.string.Data_obrigatoria));
             editTextDataNascimento.requestFocus();
             return;
         }
 
+        Doentes doentes = new Doentes();
+        doentes.setNomeUtente(nome);
+        doentes.setMoradaUtente(morada);
+        doentes.setContactoUtente(contacto);
+        doentes.setDataNascimentoUtente(datanascimento);
 
+        try {
+            this.getContentResolver().insert(PacientesContentProvider.ENDERECO_DOENTES, Converte.doentesToContentValues(doentes));
+            Toast.makeText(this,"Doente adicionado com sucesso", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Toast.makeText(this, "Falha ao adicionar doente", Toast.LENGTH_SHORT).show();
+        }
+        finish();
+
+/*
         intent.putExtra("nome", nome);
         intent.putExtra("morada", morada);
         intent.putExtra("contacto", contacto);
         intent.putExtra("datanascimento", datanascimento);
 
         startActivity(intent);
-
-        
+*/
+        //adicionar e guardar dados dos doentes
     }
-
+/*
+    public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
+        return new CursorLoader(this, PacientesContentProvider.ENDERECO_DOENTES,
+                BdTableDoentes.TODOS_CAMPOS, null, null, BdTableDoentes.CAMPO_NOME);
+    }
+*/
 
 }

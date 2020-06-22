@@ -12,7 +12,7 @@ public class ActivityRecebeDoentes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recebe_doentes);
-
+/*
         Intent intent = getIntent();
 
         String nome = intent.getStringExtra("nome");
@@ -30,6 +30,6 @@ public class ActivityRecebeDoentes extends AppCompatActivity {
         String datanascimento = intent.getStringExtra("datanascimento");
         TextView textViewDataNascimento = (TextView) findViewById(R.id.textViewDataNascimentoUtente);
         textViewDataNascimento.setText(datanascimento);
-
+*/
     }
 }

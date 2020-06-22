@@ -44,14 +44,15 @@ public class BdAppOpenHelper extends SQLiteOpenHelper {
         BdTableSintomasPresentes tabelaSP = new BdTableSintomasPresentes(db);
         tabelaSP.cria();
 
-        /*
+/*
         if (DESENVOLVIMENTO) {
             seedData(db);
         }
-        */
+*/
     }
-/*
+
     private void seedData(SQLiteDatabase db) {
+        /*
         BdTableCategorias tabelaCategorias = new BdTableCategorias(db);
 
         Categoria categoria = new Categoria();
@@ -70,29 +71,17 @@ public class BdAppOpenHelper extends SQLiteOpenHelper {
         categoria.setDescricao("Sci-fi");
         tabelaCategorias.insert(Converte.categoriaToContentValues(categoria));
 
-        BdTableLivros tabelaLivros = new BdTableLivros(db);
+        BdTableDoentes tabelaDoentes = new BdTableDoentes(db);
 
-        Livro livro = new Livro();
-        livro.setTitulo("Lua vermelha");
-        livro.setIdCategoria(idCatAcao);
-        tabelaLivros.insert(Converte.livroToContentValues(livro));
-
-        livro = new Livro();
-        livro.setTitulo("O sobrevivente");
-        livro.setIdCategoria(idCatAcao);
-        tabelaLivros.insert(Converte.livroToContentValues(livro));
-
-        livro = new Livro();
-        livro.setTitulo("O intruso");
-        livro.setIdCategoria(idCatTerror);
-        tabelaLivros.insert(Converte.livroToContentValues(livro));
-
-        livro = new Livro();
-        livro.setTitulo("O mistério do quarto secreto");
-        livro.setIdCategoria(idCatMisterio);
-        tabelaLivros.insert(Converte.livroToContentValues(livro));
-    }
+        Doentes livro = new Doentes();
+        livro.setNomeUtente("ola");
+        livro.setMoradaUtente("eueueueueueueu");
+        livro.setContactoUtente("sou ooooooo");
+        livro.setDataNascimentoUtente("manel das couves ");
+        tabelaDoentes.insert(Converte.doentesToContentValues(livro));
 */
+    }
+
     /**
      * Called when the database needs to be upgraded. The implementation
      * should use this method to drop tables, add tables, or do anything else it
