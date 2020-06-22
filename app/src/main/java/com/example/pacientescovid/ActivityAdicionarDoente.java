@@ -109,7 +109,7 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
 
         startActivity(intent);
 
-        //todo: enviar mensagem
+        
     }
 
 

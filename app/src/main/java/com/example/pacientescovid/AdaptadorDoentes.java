@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,18 +30,84 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
     public AdaptadorDoentes.ViewHolderDoentes onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemDoente = LayoutInflater.from(context).inflate(R.layout.item_doente, parent, false);
 
-        return new ViewHolderLivro(itemDoente);
+        return new ViewHolderDoentes(itemDoente);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorDoentes.ViewHolderDoentes holder, int position) {
-
+        cursor.moveToPosition(position);
+        Doentes doentes = Converte.cursorToDoentes(cursor);
+        holder.setDoente(doentes);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        if(cursor == null) {
+            return 0;
+        }
+        return cursor.getCount();
     }
 
-    private ViewHolderLivro viewHolderDoenteSelecionado = null;
+    private ViewHolderDoentes viewHolderDoenteSelecionado = null;
+
+    public class ViewHolderDoentes extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private Doentes doentes = null;
+
+        private final TextView textViewNome;
+        private final TextView textViewMorada;
+        private final TextView textViewContacto;
+        private final TextView textViewDNascimento;
+
+        public ViewHolderDoentes(@NonNull View itemView) {
+            super(itemView);
+
+            textViewNome = (TextView)itemView.findViewById(R.id.textViewNome);
+            textViewMorada = (TextView)itemView.findViewById(R.id.textViewMorada);
+            textViewContacto = (TextView)itemView.findViewById(R.id.textViewContacto);
+            textViewDNascimento = (TextView)itemView.findViewById(R.id.textViewDataNascimento);
+
+            itemView.setOnClickListener(this);
+        }
+
+        public void setDoente(Doentes doente) {
+            this.doentes = doente;
+
+            textViewNome.setText(doente.getNomeUtente());
+            textViewMorada.setText(doente.getMoradaUtente());
+            textViewContacto.setText(doente.getContactoUtente());
+            textViewDNascimento.setText(doente.getDataNascimentoUtente());
+        }
+
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param v The view that was clicked.
+         */
+        @Override
+        public void onClick(View v) {
+            if (viewHolderDoenteSelecionado == this) {
+                return;
+            }
+
+            if (viewHolderDoenteSelecionado != null) {
+                viewHolderDoenteSelecionado.desSeleciona();
+            }
+
+            viewHolderDoenteSelecionado = this;
+            seleciona();
+/*
+            MainActivity activity = (MainActivity) AdaptadorDoentes.this.context;
+            activity.livroAlterado(livro);
+
+ */
+        }
+
+        private void seleciona() {
+            itemView.setBackgroundResource(R.color.colorAccent);
+        }
+
+        private void desSeleciona() {
+            itemView.setBackgroundResource(android.R.color.white);
+        }
+    }
 }
