@@ -1,5 +1,6 @@
 package com.example.pacientescovid;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 
 public class Doentes {
@@ -76,5 +77,16 @@ public class Doentes {
         doentes.setDataNascimentoUtente(dNascimento);
 
         return doentes;
+    }
+
+    public ContentValues getContentValues(){
+        ContentValues valores = new ContentValues();
+
+        valores.put(BdTableDoentes.CAMPO_NOME, nomeUtente);
+        valores.put(BdTableDoentes.CAMPO_MORADA, moradaUtente);
+        valores.put(BdTableDoentes.CAMPO_CONTACTO, contactoUtente);
+        valores.put(BdTableDoentes.CAMPO_DATA_NASCIMENTO, dataNascimentoUtente);
+
+        return valores;
     }
 }

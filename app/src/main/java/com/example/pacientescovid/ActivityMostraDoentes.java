@@ -78,10 +78,11 @@ public class ActivityMostraDoentes extends AppCompatActivity implements LoaderMa
             //startActivity(intent);
             return true;
         } else if(id == R.id.action_moreEdit) {
-           //Intent intent = new Intent(this, MenuPessoasEditar.class);
-            // intent.putExtra(ID_PESSOAS, adaptadorPessoas.getPessoaSelecionado().getId());
+           Intent intent = new Intent(this, ActivityAlteraDoentes.class);
 
-            //startActivity(intent);
+           intent.putExtra(ID_DOENTES, adaptadorDoentes.getDoenteSelecionado().getId());
+
+           startActivity(intent);
         }else if(id == R.id.action_moreDelete) {
             Intent intent = new Intent(this, ActivityEliminarDoente.class);
 
