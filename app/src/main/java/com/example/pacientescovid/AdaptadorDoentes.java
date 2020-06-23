@@ -63,8 +63,8 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
         public ViewHolderDoentes(@NonNull View itemView) {
             super(itemView);
 
-            textViewNome = (TextView) itemView.findViewById(R.id.textViewSintoma);
-            textViewMorada = (TextView) itemView.findViewById(R.id.textViewDescricaoSintoma);
+            textViewNome = (TextView) itemView.findViewById(R.id.textViewNome);
+            textViewMorada = (TextView) itemView.findViewById(R.id.textViewMorada);
             textViewContacto = (TextView) itemView.findViewById(R.id.textViewContacto);
             textViewDNascimento = (TextView) itemView.findViewById(R.id.textViewDataNascimento);
 
@@ -81,30 +81,21 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
             textViewDNascimento.setText(doente.getDataNascimentoUtente());
         }
 
-
         /**
          * Called when a view has been clicked.
          *
          * @param v The view that was clicked.
          */
-        /*
-        @Override
-        public void onClick(View v) {
-            if (viewHolderDoenteSelecionado == this) {
-                return;
-            }
 
+/*
+        public void onClick(View v) {
             if (viewHolderDoenteSelecionado != null) {
                 viewHolderDoenteSelecionado.desSeleciona();
             }
 
             viewHolderDoenteSelecionado = this;
+            //((ActivityMostraDoentes)context).at
             seleciona();
-
-            MainActivity activity = (MainActivity) AdaptadorDoentes.this.context;
-            activity.livroAlterado(livro);
-
-
         }
 
         private void seleciona() {
