@@ -73,11 +73,7 @@ public class ActivityMostraDoentes extends AppCompatActivity implements LoaderMa
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_more) {
-            //Intent intent = new Intent(this, MenuPessoas.class);
-            //startActivity(intent);
-            return true;
-        } else if(id == R.id.action_moreEdit) {
+        if(id == R.id.action_moreEdit) {
            Intent intent = new Intent(this, ActivityAlteraDoentes.class);
 
            intent.putExtra(ID_DOENTES, adaptadorDoentes.getDoenteSelecionado().getId());
