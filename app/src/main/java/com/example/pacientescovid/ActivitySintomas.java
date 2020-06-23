@@ -20,4 +20,9 @@ public class ActivitySintomas extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void passaVerSintomas (View view){
+        Intent intent = new Intent(this, ActivityMostraSintomas.class);
+        startActivity(intent);
+    }
+
 }

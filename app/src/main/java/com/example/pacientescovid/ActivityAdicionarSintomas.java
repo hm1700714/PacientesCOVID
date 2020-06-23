@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ActivityAdicionarSintomas extends AppCompatActivity {
 
@@ -41,8 +42,19 @@ public class ActivityAdicionarSintomas extends AppCompatActivity {
             return;
         }
 
+        Sintomas sintoma = new Sintomas();
+        sintoma.setSintoma(sintomas);
+        sintoma.setDescricaoSintoma(descSintomas);
 
 
+        try {
+            this.getContentResolver().insert(PacientesContentProvider.ENDERECO_SINTOMAS, Converte.sintomasToContentValues(sintoma));
+            Toast.makeText(this,"Doente adicionado com sucesso", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Toast.makeText(this, "Falha ao adicionar doente", Toast.LENGTH_SHORT).show();
+        }
+        finish();
 
 /*
         intent.putExtra("sintoma", sintomas);
