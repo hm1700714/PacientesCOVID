@@ -111,6 +111,16 @@ public class Converte {
         return doentes;
     }
 
+    public static Sintomas cursorToSintomas(Cursor cursor) {
+        Sintomas sintomas = new Sintomas();
+
+        sintomas.setId(cursor.getLong(cursor.getColumnIndex(BdTableSintomas._ID)));
+        sintomas.setSintoma(cursor.getString(cursor.getColumnIndex(BdTableSintomas.CAMPO_SINTOMAS)));
+        sintomas.setDescricaoSintoma(cursor.getString(cursor.getColumnIndex(BdTableSintomas.CAMPO_DESCRICAO_SINTOMAS)));
+
+        return sintomas;
+    }
+
     public static EstadoSaude cursorToEstadoSaude(Cursor cursor) {
         EstadoSaude estado = new EstadoSaude();
 
