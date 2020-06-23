@@ -9,13 +9,22 @@ import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class ActivityMostraDoentes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    public static final String ID_DOENTES = "ID_DOENTES";
+
     private AdaptadorDoentes adaptadorDoentes;
     private RecyclerView recyclerViewDoentes;
+    private Menu menu;
 
     public static final int ID_CURSOR_LOADER_DOENTES = 0;
 
@@ -33,7 +42,54 @@ public class ActivityMostraDoentes extends AppCompatActivity implements LoaderMa
 
         adaptadorDoentes.setCursor(null);
 
-        LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
+        //LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
+    }
+
+    @Override
+    protected void onResume() {
+        getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_DOENTES, null, this);
+        super.onResume();
+    }
+
+
+    public void atualizaOpcoesMenu() {
+        Doentes pessoasModel = adaptadorDoentes.getDoenteSelecionado();
+
+        boolean mostraAlterarEliminar = (pessoasModel != null);
+        menu.findItem(R.id.action_moreEdit).setVisible(mostraAlterarEliminar);
+        menu.findItem(R.id.action_moreDelete).setVisible(mostraAlterarEliminar);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        this.menu = menu;
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_more) {
+            //Intent intent = new Intent(this, MenuPessoas.class);
+            //startActivity(intent);
+            return true;
+        } else if(id == R.id.action_moreEdit) {
+           //Intent intent = new Intent(this, MenuPessoasEditar.class);
+            // intent.putExtra(ID_PESSOAS, adaptadorPessoas.getPessoaSelecionado().getId());
+
+            //startActivity(intent);
+        }else if(id == R.id.action_moreDelete) {
+            Intent intent = new Intent(this, ActivityEliminarDoente.class);
+
+            intent.putExtra(ID_DOENTES, adaptadorDoentes.getDoenteSelecionado().getId());
+
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @NonNull
@@ -52,4 +108,5 @@ public class ActivityMostraDoentes extends AppCompatActivity implements LoaderMa
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
         adaptadorDoentes.setCursor(null);
     }
+
 }

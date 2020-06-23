@@ -49,9 +49,15 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
         return cursor.getCount();
     }
 
+    public Doentes getDoenteSelecionado(){
+        if (viewHolderDoenteSelecionado == null) return null;
+
+        return viewHolderDoenteSelecionado.doentes;
+    }
+
     private ViewHolderDoentes viewHolderDoenteSelecionado = null;
 
-    public class ViewHolderDoentes extends RecyclerView.ViewHolder{
+    public class ViewHolderDoentes extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private Doentes doentes = null;
 
@@ -68,7 +74,7 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
             textViewContacto = (TextView) itemView.findViewById(R.id.textViewContacto);
             textViewDNascimento = (TextView) itemView.findViewById(R.id.textViewDataNascimento);
 
-            //itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         public void setDoente(Doentes doente) {
@@ -81,31 +87,25 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
             textViewDNascimento.setText(doente.getDataNascimentoUtente());
         }
 
-        /**
-         * Called when a view has been clicked.
-         *
-         * @param v The view that was clicked.
-         */
-
-/*
+        @Override
         public void onClick(View v) {
             if (viewHolderDoenteSelecionado != null) {
                 viewHolderDoenteSelecionado.desSeleciona();
             }
 
             viewHolderDoenteSelecionado = this;
-            //((ActivityMostraDoentes)context).at
+
+            ((ActivityMostraDoentes) context).atualizaOpcoesMenu();
             seleciona();
         }
 
         private void seleciona() {
-            itemView.setBackgroundResource(R.color.colorAccent);
+            itemView.setBackgroundResource(R.color.colorPrimaryDark);
         }
 
         private void desSeleciona() {
             itemView.setBackgroundResource(android.R.color.white);
         }
-        */
     }
 }
 

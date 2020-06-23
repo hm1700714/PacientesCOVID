@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="ola"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_moreEdit"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="eu sou"
+        android:visible="true"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_moreDelete"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="o henrique"
+        android:visible="true"
+        app:showAsAction="ifRoom"/>
+
+</menu>

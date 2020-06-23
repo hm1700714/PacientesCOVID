@@ -7,7 +7,7 @@
     android:layout_height="110dp">
 
     <TextView
-        android:id="@+id/Sintoma(s)"
+        android:id="@+id/Sintoma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -28,11 +28,12 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Descrição de Sintomas"
+        android:id="@+id/DescriçãodeSintomas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -44,7 +45,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textViewDescricaoSintoma"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sintoma(s)" />
+        app:layout_constraintTop_toBottomOf="@+id/Sintoma" />
 
     <TextView
         android:id="@+id/textViewDescricaoSintoma"
@@ -54,6 +55,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintTop_toBottomOf="@+id/textViewSintoma" />"
         android:text="TextView"
         tools:layout_editor_absoluteX="169dp"
