@@ -9,10 +9,8 @@ import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 
 public class ActivityMostraDoentes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -27,7 +25,7 @@ public class ActivityMostraDoentes extends AppCompatActivity implements LoaderMa
         setContentView(R.layout.activity_mostra_doentes);
 
         getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
-        recyclerViewDoentes = (RecyclerView) findViewById(R.id.recyclerViewDoentes);
+        recyclerViewDoentes = (RecyclerView) findViewById(R.id.recyclerViewSintomas);
         adaptadorDoentes = new AdaptadorDoentes(this);
         recyclerViewDoentes.setAdapter(adaptadorDoentes);
         recyclerViewDoentes.setLayoutManager(new LinearLayoutManager(this));

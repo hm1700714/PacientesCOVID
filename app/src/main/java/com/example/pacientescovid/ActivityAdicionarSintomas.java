@@ -17,7 +17,7 @@ public class ActivityAdicionarSintomas extends AppCompatActivity {
 
     public void enviaSintomas(View view) {
 
-        Intent intent = new Intent(this, ActivityRecebeSintomas.class);
+        //Intent intent = new Intent(this, ActivityRecebeSintomas.class);
 
         //Permite ir buscar a caixa de edição de texto
 
@@ -42,12 +42,12 @@ public class ActivityAdicionarSintomas extends AppCompatActivity {
         }
 
 
+
+
+/*
         intent.putExtra("sintoma", sintomas);
         intent.putExtra("descricaosintoma", descSintomas);
-
-
         startActivity(intent);
-
-        //todo: enviar mensagem
+*/
     }
 }

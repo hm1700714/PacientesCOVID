@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toStartOf="@+id/textViewContacto"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Morada" />
+        app:layout_constraintTop_toBottomOf="@+id/DescricaoSintoma" />
 
     <TextView
-        android:id="@+id/Morada"
+        android:id="@+id/DescricaoSintoma"
         android:layout_width="80dp"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
@@ -46,13 +46,13 @@
         android:layout_marginEnd="58dp"
         android:layout_marginRight="58dp"
         android:text="Morada"
-        app:layout_constraintEnd_toStartOf="@+id/textViewMorada"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDescricaoSintoma"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nome" />
+        app:layout_constraintTop_toBottomOf="@+id/Sintoma" />
 
     <TextView
-        android:id="@+id/textViewNome"
+        android:id="@+id/textViewSintoma"
         android:layout_width="230dp"
         android:layout_height="27dp"
         android:layout_marginTop="5dp"
@@ -66,7 +66,7 @@
 
 
     <TextView
-        android:id="@+id/textViewMorada"
+        android:id="@+id/textViewDescricaoSintoma"
         android:layout_width="230dp"
         android:layout_height="27dp"
         android:layout_marginTop="5dp"
@@ -76,7 +76,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSintoma" />
 
     <TextView
         android:id="@+id/textViewContacto"
@@ -89,7 +89,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMorada" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescricaoSintoma" />
 
     <TextView
         android:id="@+id/textViewDataNascimento"
@@ -105,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewContacto" />
 
     <TextView
-        android:id="@+id/Nome"
+        android:id="@+id/Sintoma"
         android:layout_width="80dp"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
@@ -114,7 +114,7 @@
         android:layout_marginEnd="58dp"
         android:layout_marginRight="58dp"
         android:text="Nome"
-        app:layout_constraintEnd_toStartOf="@+id/textViewNome"
+        app:layout_constraintEnd_toStartOf="@+id/textViewSintoma"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

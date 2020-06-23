@@ -91,7 +91,7 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
 */
     public void enviaEstadoSaude(View view) {
 
-        Intent intent = new Intent(this, ActivityRecebeEstadoSaude.class);
+        //Intent intent = new Intent(this, ActivityRecebeEstadoSaude.class);
 
         //Permite ir buscar a caixa de edição de texto
 
@@ -134,7 +134,7 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
             editTextMedicamentos.requestFocus();
             return;
         }
-
+/*
         intent.putExtra("horaVisita", horaVisita);
         intent.putExtra("diaVisita", diaVisita);
         intent.putExtra("febre", temperatura);
@@ -142,7 +142,7 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
 
 
         startActivity(intent);
-
+*/
         //todo: enviar mensagem
     }
 

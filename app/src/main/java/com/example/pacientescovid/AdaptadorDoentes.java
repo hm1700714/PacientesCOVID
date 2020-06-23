@@ -2,16 +2,12 @@ package com.example.pacientescovid;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.loader.content.CursorLoader;
-import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.ViewHolderDoentes> {
@@ -67,8 +63,8 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
         public ViewHolderDoentes(@NonNull View itemView) {
             super(itemView);
 
-            textViewNome = (TextView) itemView.findViewById(R.id.textViewNome);
-            textViewMorada = (TextView) itemView.findViewById(R.id.textViewMorada);
+            textViewNome = (TextView) itemView.findViewById(R.id.textViewSintoma);
+            textViewMorada = (TextView) itemView.findViewById(R.id.textViewDescricaoSintoma);
             textViewContacto = (TextView) itemView.findViewById(R.id.textViewContacto);
             textViewDNascimento = (TextView) itemView.findViewById(R.id.textViewDataNascimento);
 

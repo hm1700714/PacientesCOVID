@@ -8,7 +8,7 @@
     tools:context=".ActivityMostraDoentes">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewDoentes"
+        android:id="@+id/recyclerViewSintomas"
         android:layout_width="397dp"
         android:layout_height="709dp"
         android:layout_margin="8dp"
