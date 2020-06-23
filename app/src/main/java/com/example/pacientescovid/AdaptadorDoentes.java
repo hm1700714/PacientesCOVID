@@ -100,7 +100,7 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
         }
 
         private void seleciona() {
-            itemView.setBackgroundResource(R.color.colorPrimaryDark);
+            itemView.setBackgroundResource(R.color.colorPrimary);
         }
 
         private void desSeleciona() {
