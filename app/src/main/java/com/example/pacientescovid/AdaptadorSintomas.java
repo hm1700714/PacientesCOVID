@@ -50,9 +50,15 @@ public class AdaptadorSintomas extends RecyclerView.Adapter<AdaptadorSintomas.Vi
         return cursor.getCount();
     }
 
+    public Sintomas getSintomaSelecionado(){
+        if (viewHolderSintomaSelecionado == null) return null;
+
+        return viewHolderSintomaSelecionado.sintomas;
+    }
+
     private ViewHolderSintomas viewHolderSintomaSelecionado = null;
 
-    public class ViewHolderSintomas extends RecyclerView.ViewHolder{
+    public class ViewHolderSintomas extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private Sintomas sintomas = null;
 
@@ -65,7 +71,7 @@ public class AdaptadorSintomas extends RecyclerView.Adapter<AdaptadorSintomas.Vi
             textViewSintoma = (TextView) itemView.findViewById(R.id.textViewSintoma);
             textViewDSintoma = (TextView) itemView.findViewById(R.id.textViewDescricaoSintoma);
 
-            //itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         public void setSintoma(Sintomas sintoma) {
@@ -76,10 +82,22 @@ public class AdaptadorSintomas extends RecyclerView.Adapter<AdaptadorSintomas.Vi
             textViewDSintoma.setText(sintoma.getDescricaoSintoma());
         }
 
+        public void onClick(View v){
+            if (viewHolderSintomaSelecionado != null) {
+                viewHolderSintomaSelecionado.desSeleciona();
+            }
+
+            viewHolderSintomaSelecionado = this;
+
+            ((ActivityMostraSintomas) context).atualizaOpcoesMenu();
+            seleciona();
+        }
+        private void seleciona() {
+            itemView.setBackgroundResource(R.color.colorPrimary);
+        }
+
+        private void desSeleciona() {
+            itemView.setBackgroundResource(android.R.color.white);
+        }
     }
-
-
-
-
-
 }

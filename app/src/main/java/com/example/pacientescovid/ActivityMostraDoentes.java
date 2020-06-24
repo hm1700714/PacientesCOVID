@@ -42,7 +42,7 @@ public class ActivityMostraDoentes extends AppCompatActivity implements LoaderMa
 
         adaptadorDoentes.setCursor(null);
 
-        //LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
+        LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
     }
 
     @Override

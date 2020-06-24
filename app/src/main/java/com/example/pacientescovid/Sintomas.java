@@ -31,7 +31,7 @@ public class Sintomas {
     public void setDescricaoSintoma(String descricaoSintoma) {
         this.descricaoSintoma = descricaoSintoma;
     }
-    
+
     public static Sintomas fromCursor(Cursor cursor){
 
         long id = cursor.getLong(
