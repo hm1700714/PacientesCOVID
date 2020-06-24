@@ -19,4 +19,9 @@ public class ActivityEstadoSaude extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityAdicionarEstadoSaude.class);
         startActivity(intent);
     }
+
+    public void passaVerEstadoSaude (View view){
+        Intent intent = new Intent(this, ActivityMostraEstado.class);
+        startActivity(intent);
+    }
 }
