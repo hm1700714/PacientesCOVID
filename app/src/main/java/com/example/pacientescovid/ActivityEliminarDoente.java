@@ -18,7 +18,8 @@ import android.widget.Toast;
 
 public class ActivityEliminarDoente extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private static final int ID_CURSOR_LOADER_PESSOAS = 0;
+    private static final int ID_CURSOR_LOADER_DOENTES = 0;
+
     private TextView textViewNome;
     private TextView textViewMorada;
     private TextView textViewContacto;
@@ -43,7 +44,7 @@ public class ActivityEliminarDoente extends AppCompatActivity implements LoaderM
         long idDoente = intent.getLongExtra(ActivityMostraDoentes.ID_DOENTES,-1);
 
         if(idDoente == -1){
-            Toast.makeText(this, "Erro: não foi possivel ler o Doente!", Toast.LENGTH_LONG ).show();
+            Toast.makeText(this, "Erro: não foi possivel ler o Sintoma!", Toast.LENGTH_LONG ).show();
             finish();
             return;
         }
@@ -54,7 +55,7 @@ public class ActivityEliminarDoente extends AppCompatActivity implements LoaderM
                 null, null, null);
 
         if(!cursor.moveToNext()){
-            Toast.makeText(this,"Erro não foi possivel ler o Pessoa!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Erro não foi possivel ler o Sintoma!", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -71,10 +72,10 @@ public class ActivityEliminarDoente extends AppCompatActivity implements LoaderM
         int DoentesApagados = getContentResolver().delete(enderecoEliminarDoente, null, null);
 
         if (DoentesApagados == 1) {
-            Toast.makeText(this, "nao sei o que acontece", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sintoma apagado com sucesso!", Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            Toast.makeText(this, "aconteceu", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Erro", Toast.LENGTH_LONG).show();
         }
     }
 

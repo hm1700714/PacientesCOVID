@@ -76,13 +76,11 @@ public class ActivityMostraSintomas extends AppCompatActivity implements LoaderM
 
             startActivity(intent);
         }else if(id == R.id.action_moreDelete) {
-            /*
-            Intent intent = new Intent(this, ActivityEliminarDoente.class);
+            Intent intent = new Intent(this, ActivityEliminarSintomas.class);
 
             intent.putExtra(ID_SINTOMAS, adaptadorSintomas.getSintomaSelecionado().getId());
 
             startActivity(intent);
-            */
         }
         return super.onOptionsItemSelected(item);
     }
