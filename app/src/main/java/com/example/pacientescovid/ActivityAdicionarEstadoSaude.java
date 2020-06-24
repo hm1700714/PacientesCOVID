@@ -100,7 +100,7 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity implements L
         finish();
 
     }
-    
+
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {

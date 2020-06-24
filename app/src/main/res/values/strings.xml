@@ -44,5 +44,6 @@
     <string name="Hora_visita_obrigatoria">Campo Obrigatório</string>
     <string name="Dia_visita_obrigatoria">Campo Obrigatório</string>
     <string name="alterar">Alterar</string>
+    <string name="data_da_visita">Data da Visita</string>
 
 </resources>
