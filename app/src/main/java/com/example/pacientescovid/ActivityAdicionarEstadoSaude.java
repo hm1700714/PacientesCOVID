@@ -1,21 +1,37 @@
 package com.example.pacientescovid;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
+public class ActivityAdicionarEstadoSaude extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+
+    public static final int ID_CURSOR_LOADER_DOENTES = 0;
+
+    private Spinner spinnerDoentes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_estado_saude);
+
+        spinnerDoentes = (Spinner) findViewById(R.id.spinnerRecebeDoentes);
+        mostraDadosSpinnerDoentes(null);
+        LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
 
     }
 
@@ -47,7 +63,7 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
         EditText editTextTemperatura = (EditText) findViewById(R.id.TestInputEditTextInserirTemperatura);
         String temperatura = editTextTemperatura.getText().toString();
 
-        //verificação de dados para o nome
+
 
         if(temperatura.length() == 0){
             editTextTemperatura.setError(getString(R.string.temperatura_obrigatoria));
@@ -64,26 +80,53 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity {
             return;
         }
 
+        long idDoente = spinnerDoentes.getSelectedItemId();
+
         EstadoSaude eSaude = new EstadoSaude();
-        eSaude.setSintoma(horaVisita);
-        eSaude.setSintoma(diaVisita);
-        eSaude.setSintoma(sintomas);
-        eSaude.setDescricaoSintoma(descSintomas);
+
+        eSaude.setIdDoente(idDoente);
+        eSaude.setHoraVisita(horaVisita);
+        eSaude.setDiaVisita(diaVisita);
+        eSaude.setTemperatura(temperatura);
+        eSaude.setMedicamentos(medicamentos);
 
         try {
-            this.getContentResolver().insert(PacientesContentProvider.ENDERECO_SINTOMAS, Converte.sintomasToContentValues(eSaude));
-            Toast.makeText(this,"Doente adicionado com sucesso", Toast.LENGTH_SHORT).show();
+            this.getContentResolver().insert(PacientesContentProvider.ENDERECO_ESTADOSAUDE, Converte.estadosaudeToContentValues(eSaude));
+            Toast.makeText(this,"Estado adicionado com sucesso", Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
-            Toast.makeText(this, "Falha ao adicionar doente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Falha ao adicionar estado", Toast.LENGTH_SHORT).show();
         }
         finish();
 
-
-
+    }
+    
+    @NonNull
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
+        return new CursorLoader(this, PacientesContentProvider.ENDERECO_DOENTES, BdTableDoentes.TODOS_CAMPOS,
+                null, null, BdTableDoentes.CAMPO_NOME);
     }
 
+    @Override
+    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
+        mostraDadosSpinnerDoentes(data);
+    }
 
+    @Override
+    public void onLoaderReset(@NonNull Loader<Cursor> loader) {
+        mostraDadosSpinnerDoentes(null);
+    }
 
+    private void mostraDadosSpinnerDoentes(Cursor data) {
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+                this,
+                android.R.layout.simple_list_item_1,
+                data,
+                new String[]{BdTableDoentes.CAMPO_NOME},
+                new int[]{android.R.id.text1}
+        );
+        spinnerDoentes.setAdapter(adapter);
+    }
 
 }
