@@ -1,7 +1,5 @@
 package com.example.pacientescovid;
 
-import android.content.ContentValues;
-
 public class EstadoSaude {
     private long id = -1;
     private String horaVisita;
@@ -58,7 +56,6 @@ public class EstadoSaude {
     public void setTemperatura(String temperatura) {
         Temperatura = temperatura;
     }
-
     public String getMedicamentos() {
         return Medicamentos;
     }
@@ -66,6 +63,5 @@ public class EstadoSaude {
     public void setMedicamentos(String medicamentos) {
         Medicamentos = medicamentos;
     }
-
 
 }

@@ -26,7 +26,7 @@ public class AdaptadorEstado extends RecyclerView.Adapter<AdaptadorEstado.ViewHo
     public AdaptadorEstado(Context context) {
         this.context = context;
     }
-
+    
     @NonNull
     @Override
     public ViewHolderEstado onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

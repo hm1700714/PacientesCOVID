@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.Serializable;
 
 public class ActivityMostraEstado extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -25,6 +28,8 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
     private AdaptadorEstado adaptadorEstado;
     private RecyclerView recyclerViewEstado;
     private Menu menu;
+
+    private EstadoSaude estadoSaude = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +74,7 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
 
             Intent intent = new Intent(this, ActivityAlteraEstado.class);
 
-            intent.putExtra(ID_Estado, adaptadorEstado.getEstadoSelecionado().getId());
+            intent.putExtra("Estado", (Serializable) estadoSaude);
 
             startActivity(intent);
 
