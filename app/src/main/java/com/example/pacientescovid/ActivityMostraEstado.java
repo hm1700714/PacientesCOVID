@@ -19,7 +19,8 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
 
     public static final int ID_CURSOR_LOADER_DOENTE = 0;
 
-    //public static final String ID_SINTOMAS = "ID_SINTOMAS";
+    public static final String ID_DOENTE = "ID_DOENTE";
+    public static final String ID_Estado = "ID_Estado";
 
     private AdaptadorEstado adaptadorEstado;
     private RecyclerView recyclerViewEstado;
@@ -65,13 +66,12 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
         int id = item.getItemId();
 
         if(id == R.id.action_moreEdit) {
-            /*
-            Intent intent = new Intent(this, ActivityAlteraSintomas.class);
 
-            intent.putExtra(ID_SINTOMAS, adaptadorEstado.getSintomaSelecionado().getId());
+            Intent intent = new Intent(this, ActivityAlteraEstado.class);
+
+            intent.putExtra(ID_Estado, adaptadorEstado.getEstadoSelecionado().getId());
 
             startActivity(intent);
-            */
 
         }else if(id == R.id.action_moreDelete) {
             /*

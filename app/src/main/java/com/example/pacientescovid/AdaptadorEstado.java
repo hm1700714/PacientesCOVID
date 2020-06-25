@@ -27,7 +27,6 @@ public class AdaptadorEstado extends RecyclerView.Adapter<AdaptadorEstado.ViewHo
         this.context = context;
     }
 
-
     @NonNull
     @Override
     public ViewHolderEstado onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -86,7 +85,7 @@ public class AdaptadorEstado extends RecyclerView.Adapter<AdaptadorEstado.ViewHo
         public void setEstado(EstadoSaude estado) {
             this.estado = estado;
 
-            textViewNome.setText(String.valueOf(estado.getIdDoente()));
+            textViewNome.setText(String.valueOf(estado.getDoente()));
             textViewHora.setText(estado.getHoraVisita());
             textViewDia.setText(estado.getDiaVisita());
             textViewTemperatura.setText(estado.getTemperatura());
