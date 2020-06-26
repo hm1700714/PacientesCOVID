@@ -64,4 +64,54 @@ public class EstadoSaude {
         Medicamentos = medicamentos;
     }
 
+
+
+    /*
+        public ContentValues getContentValues(){
+        ContentValues valores = new ContentValues();
+
+        valores.put(BdTableDoentes.CAMPO_NOME, nomeUtente);
+        valores.put(BdTableDoentes.CAMPO_NOME, nomeUtente);
+        valores.put(BdTableDoentes.CAMPO_MORADA, moradaUtente);
+        valores.put(BdTableDoentes.CAMPO_CONTACTO, contactoUtente);
+        valores.put(BdTableDoentes.CAMPO_DATA_NASCIMENTO, dataNascimentoUtente);
+
+        return valores;
+    }
+     */
+
+
+    /*
+
+        public static Doentes fromCursor(Cursor cursor){
+
+        passar o id do doente e do estado de saude tbm
+        long id = cursor.getLong(
+                cursor.getColumnIndex(BdTableDoentes._ID)
+        );
+        String nome = cursor.getString(
+                cursor.getColumnIndex(BdTableDoentes.CAMPO_NOME)
+        );
+        String morada = cursor.getString(
+                cursor.getColumnIndex(BdTableDoentes.CAMPO_MORADA)
+        );
+        String contacto = cursor.getString(
+                cursor.getColumnIndex(BdTableDoentes.CAMPO_CONTACTO)
+        );
+        String dNascimento = cursor.getString(
+                cursor.getColumnIndex(BdTableDoentes.CAMPO_DATA_NASCIMENTO)
+        );
+
+        Doentes doentes = new Doentes();
+
+        doentes.setId(id);
+        doentes.setNomeUtente(nome);
+        doentes.setMoradaUtente(morada);
+        doentes.setContactoUtente(contacto);
+        doentes.setDataNascimentoUtente(dNascimento);
+
+        return doentes;
+    }
+
+     */
 }

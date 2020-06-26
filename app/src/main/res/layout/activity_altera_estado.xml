@@ -89,8 +89,8 @@
 
     <Button
         android:id="@+id/buttonAlteraEstado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
         android:layout_marginTop="30dp"
@@ -100,7 +100,11 @@
         android:text="@string/alterar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutMedicamentos" />
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutMedicamentos"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_button"/>
 
     <Spinner
         android:id="@+id/spinnerAlteraDoentes"

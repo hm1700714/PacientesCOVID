@@ -88,14 +88,18 @@
 
     <Button
         android:id="@+id/buttonAdicionarSintomas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="160dp"
         android:onClick="enviaMensagem"
         android:text="@string/adicionar_doente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_button"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
