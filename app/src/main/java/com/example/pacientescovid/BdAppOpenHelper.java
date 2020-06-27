@@ -43,7 +43,6 @@ public class BdAppOpenHelper extends SQLiteOpenHelper {
 
         BdTableSintomasPresentes tabelaSP = new BdTableSintomasPresentes(db);
         tabelaSP.cria();
-
 /*
         if (DESENVOLVIMENTO) {
             seedData(db);

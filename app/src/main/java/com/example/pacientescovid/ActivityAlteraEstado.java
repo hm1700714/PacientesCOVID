@@ -36,6 +36,8 @@ public class ActivityAlteraEstado extends AppCompatActivity implements LoaderMan
     private boolean carregaDoentes = false;
     private boolean atualizaDoentes = false;
 
+    private Uri enderecoEditarEstado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,20 +49,42 @@ public class ActivityAlteraEstado extends AppCompatActivity implements LoaderMan
         editTextAlteraTemperaturas = (EditText) findViewById(R.id.TextInputEditTextTemperatura);
         editTextAlteraMedicamentos = (EditText) findViewById(R.id.TextInputEditTextMedicamentos);
 
+        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
+
         mostraDadosSpinnerPessoas(null);
 
         Intent intent = getIntent();
 
-        estadoSaude = (EstadoSaude) intent.getSerializableExtra("Estado");
-/*
-        editTextAlteraHoras.setText(estadoSaude.getHoraVisita());
+        //se colocar ID_DOENTE ele nao passa daqui
 
+        long idDoente = intent.getLongExtra(ActivityMostraEstado.ID_DOENTE,-1);
+
+        if(idDoente == -1){
+            Toast.makeText(this, "Erro: não passa daqui!", Toast.LENGTH_LONG ).show();
+            finish();
+            return;
+        }
+
+        enderecoEditarEstado = Uri.withAppendedPath(PacientesContentProvider.ENDERECO_ESTADOSAUDE, String.valueOf(idDoente));
+
+        Cursor cursor = getContentResolver().query(enderecoEditarEstado, BdTableEstadoSaude.TODOS_CAMPOS,
+                null, null, null);
+
+        if(!cursor.moveToNext()){
+            Toast.makeText(this,"Erro não foi possivel ler o Doente!!", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        estadoSaude = EstadoSaude.fromCursor(cursor);
+
+        editTextAlteraHoras.setText(estadoSaude.getHoraVisita());
         editTextAlteraDias.setText(estadoSaude.getDiaVisita());
         editTextAlteraTemperaturas.setText(estadoSaude.getTemperatura());
         editTextAlteraMedicamentos.setText(estadoSaude.getMedicamentos());
 
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTES, null, this);
-*/
+
     }
 
     private void mostraDadosSpinnerPessoas(Cursor data) {
@@ -71,7 +95,6 @@ public class ActivityAlteraEstado extends AppCompatActivity implements LoaderMan
                 new String[]{BdTableDoentes.CAMPO_NOME},
                 new int[]{android.R.id.text1}
         );
-
         MostraDoentesSpinner.setAdapter(adapter);
     }
 

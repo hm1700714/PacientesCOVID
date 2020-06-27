@@ -1,5 +1,8 @@
 package com.example.pacientescovid;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+
 public class EstadoSaude {
     private long id = -1;
     private String horaVisita;
@@ -65,53 +68,50 @@ public class EstadoSaude {
     }
 
 
+    public ContentValues getContentValues(){
+    ContentValues valores = new ContentValues();
 
-    /*
-        public ContentValues getContentValues(){
-        ContentValues valores = new ContentValues();
+    valores.put(BdTableEstadoSaude.CAMPO_DOENTE, Doente);
+    valores.put(BdTableEstadoSaude.CAMPO_HORA_VISITA, horaVisita);
+    valores.put(BdTableEstadoSaude.CAMPO_DIA_VISITA, diaVisita);
+    valores.put(BdTableEstadoSaude.CAMPO_TEMPERATURA, Temperatura);
+    valores.put(BdTableEstadoSaude.CAMPO_MEDICAMENTOS, Medicamentos);
 
-        valores.put(BdTableDoentes.CAMPO_NOME, nomeUtente);
-        valores.put(BdTableDoentes.CAMPO_NOME, nomeUtente);
-        valores.put(BdTableDoentes.CAMPO_MORADA, moradaUtente);
-        valores.put(BdTableDoentes.CAMPO_CONTACTO, contactoUtente);
-        valores.put(BdTableDoentes.CAMPO_DATA_NASCIMENTO, dataNascimentoUtente);
-
-        return valores;
-    }
-     */
-
-
-    /*
-
-        public static Doentes fromCursor(Cursor cursor){
-
-        passar o id do doente e do estado de saude tbm
-        long id = cursor.getLong(
-                cursor.getColumnIndex(BdTableDoentes._ID)
-        );
-        String nome = cursor.getString(
-                cursor.getColumnIndex(BdTableDoentes.CAMPO_NOME)
-        );
-        String morada = cursor.getString(
-                cursor.getColumnIndex(BdTableDoentes.CAMPO_MORADA)
-        );
-        String contacto = cursor.getString(
-                cursor.getColumnIndex(BdTableDoentes.CAMPO_CONTACTO)
-        );
-        String dNascimento = cursor.getString(
-                cursor.getColumnIndex(BdTableDoentes.CAMPO_DATA_NASCIMENTO)
-        );
-
-        Doentes doentes = new Doentes();
-
-        doentes.setId(id);
-        doentes.setNomeUtente(nome);
-        doentes.setMoradaUtente(morada);
-        doentes.setContactoUtente(contacto);
-        doentes.setDataNascimentoUtente(dNascimento);
-
-        return doentes;
+    return valores;
     }
 
-     */
+    public static EstadoSaude fromCursor(Cursor cursor){
+
+    //passar o id do doente e do estado de saude tbm
+
+    long id = cursor.getLong(
+             cursor.getColumnIndex(BdTableEstadoSaude._ID)
+    );
+    long idDoente = cursor.getLong(
+                cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_ID_DOENTE)
+    );
+    String hora = cursor.getString(
+             cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_HORA_VISITA)
+    );
+    String dia = cursor.getString(
+             cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_DIA_VISITA)
+    );
+    String temperatura = cursor.getString(
+             cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_TEMPERATURA)
+    );
+    String medicamentos = cursor.getString(
+             cursor.getColumnIndex(BdTableEstadoSaude.CAMPO_MEDICAMENTOS)
+    );
+
+    EstadoSaude estado = new EstadoSaude();
+
+        estado.setId(id);
+        estado.setIdDoente(idDoente);
+        estado.setHoraVisita(hora);
+        estado.setDiaVisita(dia);
+        estado.setTemperatura(temperatura);
+        estado.setMedicamentos(medicamentos);
+
+    return estado;
+    }
 }

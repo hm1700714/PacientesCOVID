@@ -49,7 +49,6 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
 
     }
 
-
     public void atualizaOpcoesMenu() {
         EstadoSaude estado = adaptadorEstado.getEstadoSelecionado();
 
@@ -58,7 +57,6 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
         menu.findItem(R.id.action_moreDelete).setVisible(mostraAlterarEliminar);
 
     }
-
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -74,19 +72,9 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
 
             Intent intent = new Intent(this, ActivityAlteraEstado.class);
 
-            intent.putExtra("Estado", (Serializable) estadoSaude);
+            intent.putExtra(ID_Estado, adaptadorEstado.getEstadoSelecionado().getId());
 
             startActivity(intent);
-
-        }else if(id == R.id.action_moreDelete) {
-            /*
-            Intent intent = new Intent(this, ActivityEliminarSintomas.class);
-
-            intent.putExtra(ID_SINTOMAS, adaptadorEstado.getEstadoSelecionado().getId());
-
-            startActivity(intent);
-
-             */
         }
         return super.onOptionsItemSelected(item);
     }

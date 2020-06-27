@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestão Pacientes</string>
+    <string name="doentes">Patients</string>
+    <string name="estadosaude">Health Condition</string>
+    <string name="adicionar_doente">Add Patient</string>
+    <string name="editar_doente">Edit Patient</string>
+    <string name="ver_doente">Patient List</string>
+    <string name="apagar_doente">Erase Patients</string>
+    <string name="adicionar_estado_saude">Add Health Condition</string>
+    <string name="apagar_estado_saude">Delete Health Condition</string>
+    <string name="ver_estado_de_saude">Health Condition List</string>
+    <string name="editar_estado_de_saude">Edit Health Condition</string>
+    <string name="sintomas">Symptoms</string>
+    <string name="adicionar_sintomas">Add  Symptoms</string>
+    <string name="editar_sintomas">Edit  Symptoms</string>
+    <string name="ver_sintomas">Symptoms List</string>
+    <string name="nome_do_utente">Patient Name</string>
+    <string name="morada_do_utente">Patient Address</string>
+    <string name="contacto_do_utente">Contact</string>
+    <string name="data_de_nascimento">Date of Birth</string>
+    <string name="dia_da_visita">Day of Visit</string>
+    <string name="hora_da_visita">Time of Visit</string>
+    <string name="temperatura_recolhida">Collected Temperature</string>
+    <string name="medicamentos">Medicines</string>
+    <string name="sintoma">Symptom(s)</string>
+    <string name="descricao_sintomas">Symptom(s) Description</string>
+    <string name="data_botao">Date</string>
+    <string name="preencherNome">Name is mandatory</string>
+    <string name="preencherMorada">Address is mandatory</string>
+    <string name="preencherContacto">Phone Number Required</string>
+    <string name="ContactoErrado">Invalid Phone Number</string>
+    <string name="horas_botao">Time</string>
+    <string name="dia_visita">Day of Visit</string>
+    <string name="horas_da_visitas">Time of Visite</string>
+    <string name="dados_do_paciente">Patients Information</string>
+    <string name="sintomas_obrigatorios">Required field!</string>
+    <string name="descricao_sintomas_obrigatoria">Required field!</string>
+    <string name="temperatura_obrigatoria">Required field!</string>
+    <string name="medicamentos_obrigatorios">Required field!</string>
+    <string name="Data_obrigatoria">Date of Birth required!</string>
+    <string name="Hora_visita_obrigatoria">Required field!</string>
+    <string name="Dia_visita_obrigatoria">Required field!</string>
+    <string name="alterar">"Edit "</string>
+    <string name="data_da_visita">Date of visit</string>
+</resources>

@@ -106,6 +106,7 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
         }
 
         Doentes doentes = new Doentes();
+
         doentes.setNomeUtente(nome);
         doentes.setMoradaUtente(morada);
         doentes.setContactoUtente(contacto);
