@@ -63,7 +63,6 @@
     <string name="nome">Nome</string>
     <string name="morada">Morada</string>
     <string name="contacto">Contacto</string>
-    <string name="data_de_nascimento">Data de Nascimento</string>
     <string name="doente">Doente</string>
     <string name="descricao_de_sintomas">Descrição de Sintomas</string>
 
