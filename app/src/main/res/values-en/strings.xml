@@ -59,4 +59,9 @@
     <string name="erro_ler_doente">Failed to read Patient</string>
     <string name="doente_apagado">Patient successfully Deleted!</string>
     <string name="sintoma_apagado">Symptom successfully edited</string>
+    <string name="nome">Name</string>
+    <string name="morada">Address</string>
+    <string name="contacto">Contact</string>
+    <string name="doente">Patient</string>
+    <string name="descricao_de_sintomas">Symptom(s) Description</string>
 </resources>
