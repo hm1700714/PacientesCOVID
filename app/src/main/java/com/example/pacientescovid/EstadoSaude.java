@@ -3,7 +3,9 @@ package com.example.pacientescovid;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-public class EstadoSaude {
+import java.io.Serializable;
+
+public class EstadoSaude implements Serializable {
     private long id = -1;
     private String horaVisita;
     private String diaVisita;
@@ -67,7 +69,7 @@ public class EstadoSaude {
         Medicamentos = medicamentos;
     }
 
-
+/*
     public ContentValues getContentValues(){
     ContentValues valores = new ContentValues();
 
@@ -114,4 +116,6 @@ public class EstadoSaude {
 
     return estado;
     }
+    */
+
 }

@@ -41,7 +41,7 @@ public class ActivityEliminarSintomas extends AppCompatActivity implements Loade
         long idSintoma = intent.getLongExtra(ActivityMostraSintomas.ID_SINTOMAS,-1);
 
         if(idSintoma == -1){
-            Toast.makeText(this, "Erro: não foi possivel ler o Sintoma!", Toast.LENGTH_LONG ).show();
+            Toast.makeText(this, R.string.erro_ler_sintoma, Toast.LENGTH_LONG ).show();
             finish();
             return;
         }
@@ -52,7 +52,7 @@ public class ActivityEliminarSintomas extends AppCompatActivity implements Loade
                 null, null, null);
 
         if(!cursor.moveToNext()){
-            Toast.makeText(this,"Erro não foi possivel ler o Pessoa!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.erro_ler_sintoma, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -67,10 +67,10 @@ public class ActivityEliminarSintomas extends AppCompatActivity implements Loade
         int SintomasApagados = getContentResolver().delete(enderecoEliminarSintomas, null, null);
 
         if (SintomasApagados == 1) {
-            Toast.makeText(this, "nao sei o que acontece", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.sintoma_apagado, Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            Toast.makeText(this, "aconteceu", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
         }
     }
 

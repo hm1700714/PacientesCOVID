@@ -124,12 +124,11 @@ public class ActivityAlteraDoentes extends AppCompatActivity implements LoaderMa
 
         try {
             getContentResolver().update( enderecoEditarDoentes, doentes.getContentValues(), null, null);
-
-            Toast.makeText(this, ("Doente alterado com Sucesso"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, (getString(R.string.doente_alterado)), Toast.LENGTH_SHORT).show();
             finish();
 
         } catch (Exception e) {
-            Toast.makeText(this,("correu ?!?!?!"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,(getString(R.string.erro_alterar_doente)), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 

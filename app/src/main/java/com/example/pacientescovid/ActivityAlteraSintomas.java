@@ -42,7 +42,7 @@ public class ActivityAlteraSintomas extends AppCompatActivity implements LoaderM
         long idSintoma = intent.getLongExtra(ActivityMostraSintomas.ID_SINTOMAS,-1);
 
         if(idSintoma == -1){
-            Toast.makeText(this, "Erro: não foi possivel ler o Sintoma!", Toast.LENGTH_LONG ).show();
+            Toast.makeText(this, R.string.erro_ler_sintoma, Toast.LENGTH_LONG ).show();
             finish();
             return;
         }
@@ -53,7 +53,7 @@ public class ActivityAlteraSintomas extends AppCompatActivity implements LoaderM
                 null, null, null);
 
         if(!cursor.moveToNext()){
-            Toast.makeText(this,"Erro não foi possivel ler o Sintoma!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.erro_ler_sintoma, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -99,11 +99,11 @@ public class ActivityAlteraSintomas extends AppCompatActivity implements LoaderM
         try {
             getContentResolver().update( enderecoEditarSintomas, sintomas.getContentValues(), null, null);
 
-            Toast.makeText(this, ("Sintoma alterado com Sucesso"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, (getString(R.string.sintoma_alterado)), Toast.LENGTH_SHORT).show();
             finish();
 
         } catch (Exception e) {
-            Toast.makeText(this,("correu ?!?!?!"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,(R.string.erro_alterar_sintoma), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
         finish();

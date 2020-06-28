@@ -54,7 +54,7 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
 
         boolean mostraAlterarEliminar = (estado != null);
         menu.findItem(R.id.action_moreEdit).setVisible(mostraAlterarEliminar);
-        menu.findItem(R.id.action_moreDelete).setVisible(mostraAlterarEliminar);
+        //menu.findItem(R.id.action_moreDelete).setVisible(mostraAlterarEliminar);
 
     }
 
@@ -72,7 +72,7 @@ public class ActivityMostraEstado extends AppCompatActivity implements LoaderMan
 
             Intent intent = new Intent(this, ActivityAlteraEstado.class);
 
-            intent.putExtra(ID_Estado, adaptadorEstado.getEstadoSelecionado().getId());
+            intent.putExtra("Estado", estadoSaude);
 
             startActivity(intent);
         }

@@ -48,10 +48,10 @@ public class ActivityAdicionarSintomas extends AppCompatActivity {
 
         try {
             this.getContentResolver().insert(PacientesContentProvider.ENDERECO_SINTOMAS, Converte.sintomasToContentValues(sintoma));
-            Toast.makeText(this,"Doente adicionado com sucesso", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.sintoma_adicionado, Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
-            Toast.makeText(this, "Falha ao adicionar doente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.falha_sintoma, Toast.LENGTH_SHORT).show();
         }
         finish();
 

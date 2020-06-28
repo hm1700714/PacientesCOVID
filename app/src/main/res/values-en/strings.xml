@@ -43,4 +43,20 @@
     <string name="Dia_visita_obrigatoria">Required field!</string>
     <string name="alterar">"Edit "</string>
     <string name="data_da_visita">Date of visit</string>
+    <string name="error">Error</string>
+    <string name="apagar_sintomas">Delete Symptoms</string>
+    <string name="estado_adicionado">Health Condition Added</string>
+    <string name="falha_estado">Failed to insert Health Condition</string>
+    <string name="erro_alterar_sintoma">Failed to edit Symptoms</string>
+    <string name="erro_ler_sintoma">Failed to read Symptoms</string>
+    <string name="paciente_adicionado">Patient Added</string>
+    <string name="falha_paciente">Failed to Add Patient</string>
+    <string name="sintoma_adicionado">Symptoms Added</string>
+    <string name="falha_sintoma">Failed to add Symptoms</string>
+    <string name="doente_alterado">Patient successfully edited</string>
+    <string name="erro_alterar_doente">Failed to edit Patient</string>
+    <string name="sintoma_alterado">Symptom successfully edited</string>
+    <string name="erro_ler_doente">Failed to read Patient</string>
+    <string name="doente_apagado">Patient successfully Deleted!</string>
+    <string name="sintoma_apagado">Symptom successfully edited</string>
 </resources>

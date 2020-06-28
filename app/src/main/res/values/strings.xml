@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Gestão Pacientes</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="doentes">Doentes</string>
     <string name="estadosaude">Estado de Saúde</string>
     <string name="adicionar_doente">Adicionar Doente</string>
@@ -45,5 +45,21 @@
     <string name="Dia_visita_obrigatoria">Campo Obrigatório</string>
     <string name="alterar">Alterar</string>
     <string name="data_da_visita">Data da Visita</string>
+    <string name="paciente_adicionado">Doente adicionado com sucesso</string>
+    <string name="falha_paciente">Falha ao adicionar doente</string>
+    <string name="estado_adicionado">Estado adicionado com sucesso</string>
+    <string name="falha_estado">Falha ao adicionar estado</string>
+    <string name="sintoma_adicionado">Sintoma adicionado com sucesso</string>
+    <string name="falha_sintoma">Falha ao adicionar sintoma</string>
+    <string name="doente_alterado">Doente alterado com sucesso</string>
+    <string name="erro_alterar_doente">Erro ao alterar doente</string>
+    <string name="sintoma_alterado">Sintoma alterado com sucesso</string>
+    <string name="erro_alterar_sintoma">Erro ao alterar sintoma</string>
+    <string name="erro_ler_sintoma">Erro: não foi possivel ler o Sintoma!</string>
+    <string name="erro_ler_doente">Erro: não foi possivel ler o Doente!</string>
+    <string name="doente_apagado">Doente apagado com sucesso!</string>
+    <string name="sintoma_apagado">Sintoma apagado com sucesso!</string>
+    <string name="error">Erro</string>
+
 
 </resources>

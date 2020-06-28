@@ -37,7 +37,6 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity implements L
 
     public void enviaEstadoSaude(View view) {
 
-        //Intent intent = new Intent(this, ActivityRecebeEstadoSaude.class);
 
         //Permite ir buscar a caixa de edição de texto
 
@@ -92,10 +91,10 @@ public class ActivityAdicionarEstadoSaude extends AppCompatActivity implements L
 
         try {
             this.getContentResolver().insert(PacientesContentProvider.ENDERECO_ESTADOSAUDE, Converte.estadosaudeToContentValues(eSaude));
-            Toast.makeText(this,"Estado adicionado com sucesso", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.estado_adicionado, Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
-            Toast.makeText(this, "Falha ao adicionar estado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.falha_estado, Toast.LENGTH_SHORT).show();
         }
         finish();
 

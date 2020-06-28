@@ -63,8 +63,6 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
  */
     public void enviaMensagem(View view) {
 
-        //Intent intent = new Intent(this, ActivityRecebeDoentes.class);
-
         //Permite ir buscar a caixa de edição de texto
 
         EditText editTextNome = (EditText) findViewById(R.id.TestInputEditTextInserirNome);
@@ -114,28 +112,13 @@ public class ActivityAdicionarDoente extends AppCompatActivity {
 
         try {
             this.getContentResolver().insert(PacientesContentProvider.ENDERECO_DOENTES, Converte.doentesToContentValues(doentes));
-            Toast.makeText(this,"Doente adicionado com sucesso", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.paciente_adicionado, Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
-            Toast.makeText(this, "Falha ao adicionar doente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.falha_paciente, Toast.LENGTH_SHORT).show();
         }
         finish();
 
-/*
-        intent.putExtra("nome", nome);
-        intent.putExtra("morada", morada);
-        intent.putExtra("contacto", contacto);
-        intent.putExtra("datanascimento", datanascimento);
-
-        startActivity(intent);
-*/
-        //adicionar e guardar dados dos doentes
     }
-/*
-    public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
-        return new CursorLoader(this, PacientesContentProvider.ENDERECO_DOENTES,
-                BdTableDoentes.TODOS_CAMPOS, null, null, BdTableDoentes.CAMPO_NOME);
-    }
-*/
 
 }
